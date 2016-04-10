@@ -14,7 +14,7 @@ class DBConnection
     private $username;
     private $psd;
     private $parameters;
-    private $conn;
+    private $connection;
     public function __construct()
     {
         $this->parameters = new DBParameters();
@@ -27,16 +27,49 @@ class DBConnection
 
     //connect ...
     public function connDB(){
-        $this->conn = new mysqli($this->host, $this->username,
+        $this->connection = new mysqli($this->host, $this->username,
             $this->psd, $this->dbname);
-        if($this->conn->connect_error)
+        if($this->connection->connect_error)
         {
-            die("Connection error".$this->conn->connect_error);
+            die("Connection error".$this->connection->connect_error);
         }
     }
 
     //disconnecting ...
     public function disconnectDB(){
-        $this->conn->close();
+        $this->connection->close();
     }
+    
+    public function getConnection(){
+        return $this->connection;
+    }
+
+    /**
+     * 加入愿望清单
+     * @param $userId 用户id
+     * @param $bookIds 书籍id数组
+     */
+    public function addToWishList($userId, $bookIds){
+
+    }
+
+    /**
+     * 从愿望清单删除
+     * @param $userId 用户id
+     * @param $bookIds 书籍id 数组
+     */
+    public function deleteFromWishList($userId, $bookIds){
+
+    }
+
+    /**
+     * 更新用户财富
+     * @param $userId  用户id
+     * @param $value 值
+     */
+    public function updateUserFortune($userId, $value)
+    {
+
+    }
+
 }
