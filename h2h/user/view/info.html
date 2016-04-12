@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Information</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/exhibition.css">
+        <script type="text/javascript" src="js/sell.js"></script>
+    </head>
+    <body>
+        <p id="top"></p>
+        <form >
+        
+        
+ 
+        <table align="center">
+		
+		   <td><img class="imag1" src="Images/LOGO.png" /></td>
+           
+		   
+		       <tr>
+		       <!--从数据库读取书的图片信息-->
+               <td><img src="book/a.jpg" class="imag2"/></td>
+			  
+			   <div>
+               <td>
+			   <!--从数据库读取书名-->
+			   <span id="bookname">Book Name:</span><br/>
+			   <!--从数据库读取作者-->
+			   <span id="author">Author:</span><br/>
+			   <!--从数据库读取版本-->
+			   <span id="edition">Edition:</span><br/>
+			   <!--从数据库读取出版社-->
+			   <span id="publishcompany">Publishing Company:</span><br/>
+			   <!--从数据库读取每天的租用价格-->
+			   <span id="rentprice">Rent Price/day:$20/per</span><br/>
+			   <!--从数据库读取租用天数-->
+			   <span id="time">Time/day:</span><br/>
+			   <!--从数据库读取书的具体信息-->
+			   <span id="description">Description:</span><br/>
+			   <!--从数据库读取评论-->
+			   <span id="comment">Comment:</span><br/>
+			   
+			   <h3 onclick="AddtoCart('book/c')">Rent</h3>
+			   </td>
+			   </div>
+			   
+               </tr>
+			   <!--从数据库读取书的图片信息-->
+			   <tr><td><img src="book/b.jpg" class="imag2"/></td></tr>
+			   <!--从数据库读取书的图片信息-->
+			   <tr><td><img src="book/c.jpg" class="imag2"/></td><tr>
+          
+       </table>
+        
+           <input hidden="hidden" value='' id='infor' name='infor'/>
+		   
+         <a href="card.html"><img src="Images/card.png" id="card"/></a>
+         <a href="welcome.html"><img id="backimage" src="Images/backToMain.png" alt="Back to Main"></a>
+         <a href='contactUs.html'><img id='mail' src='Images/mail.png' alt="mail"/></a>
+		 
+        </form>
+    </body>
+</html>
