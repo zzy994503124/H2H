@@ -11,3 +11,8 @@ $(function () {
 		}
 	);
 });
+
+/* 调用接口获得图书id*/
+window.onload=function(){
+	
+}
