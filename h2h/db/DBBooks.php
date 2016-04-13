@@ -15,8 +15,10 @@ class DBBooks
     {
      /*   $this->conn = new mysqli(DBParameters::$server, DBParameters::$username,
             DBParameters::$psd, DBParameters::$dbname);*/
+    	//mysqli_query("set names utf8");
         $this->conn = new mysqli("localhost","root",
         		"", "h2h");
+        $this->conn->query("SET NAMES utf8");
         if($this->conn->connect_error)
         {
             die("Connection error".$this->conn->connect_error);
@@ -61,10 +63,12 @@ class DBBooks
      */
     public function getSimpleInfoById($id){
     	$this->connect();
-        $sql = "SELECT bookNumber, rentPrice from book_rent where bookId = $id";
+        $sql = "SELECT bookNumber, rentPrice from book_rent where bookId=$id";
+        echo $sql;
         $result = $this->conn->query($sql);
-        return $result;
         $this->disconnect();
+        return $result;
+        
     }
 
     /**
@@ -73,9 +77,20 @@ class DBBooks
      * return 书籍所有信息
      */
     public function getDetails($id){
-        $sql = "SELECT * FROM book where bookId = $id";
-        $result = $this->conn->query($sql);
-        return $result;
+    	
+    	$this->connect();
+    	$bookId = (int)$id;
+        $sql = "SELECT bookName, rentPrice, description FROM book,book_rent where book.bookId = $id and book_rent.bookId = $id";
+        //$sql = "SELECT * from book where bookId = $id";
+      //  mysql_query("SET NAMES 'UTF8'");
+     	$result = $this->conn->query($sql);
+    	while ($row = mysqli_fetch_array($result))
+        	$rows[] = $row;
+    		//echo $result;
+    		//echo $sql;
+        	return $rows;
+        	//return implode("###",$rows);
+    	$this->disconnect();
     }
 
 
