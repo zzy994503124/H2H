@@ -19,10 +19,13 @@
         		position: absolute;
         	}
         	header a img{
-        		width: 370px;
-        		height: 135px;
+        		width: 320px;
+        		height: 115px;
         		left: auto;
         		position: absolute;
+        	}
+        	header a img:hover{
+        		cursor: pointer;
         	}
         	#content{
         		width: 100%;
