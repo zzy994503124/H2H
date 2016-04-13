@@ -21,7 +21,7 @@
 				<article id = "description">
 					
 				</article>
-				<a href="Order.html">
+				<a onclick = "rent()">
 					<p>租      书</p>
 				</a>
 			</div>
@@ -58,5 +58,13 @@
 		document.getElementById("price").innerHTML = price;
 		
 	}
+	
+		function rent(){
+			var url = location.search;
+			var id =  url.split("=")[1];
+			window.location.href="order.php?bookid="+id+"&price=" + document.getElementById("price").innerHTML;
+		
+		}
+		
 	</script>
 </html>

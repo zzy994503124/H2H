@@ -1,32 +1,5 @@
 'use strict';
-/**
- * jquery.gDialog.js
- * @version: v0.1.0
- * @author: ogilvieira
- *
- * The MIT License (http://www.opensource.org/licenses/mit-license.php)
- *
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without
- * restriction, including without limitation the rights to use,
- * copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following
- * conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- */
+
 
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
@@ -91,11 +64,12 @@
         var that = this;
 
         that.close = function(){
+        	window.location.href = "http://www.h2h.com";
             $('.gdialog-shadow').addClass("animated fadeOut");
             if( that.options.animateOut ){
                 if( that.options.animateIn ){ that.container.find('.gdialog-container').removeClass(that.options.animateIn) }
                 that.container.find('.gdialog-container').addClass('animated '+that.options.animateOut);
-				window.location.href = "http://www.baidu.com";
+				window.location.href = "http://www.h2h.com";
                 setTimeout(function(){
                     that.container.removeClass('is-active');
                     that.container.remove();
@@ -103,6 +77,7 @@
                     $('.gdialog-shadow').remove();
                 }, 800);
             }else {
+            	window.location.href = "http://www.h2h.com";
                 that.container.remove();
                 m.OPENING = false;
                 $('.gdialog-shadow').remove();
@@ -111,6 +86,7 @@
 
         that.addEvents = function(){
             that.btnOk.on("click", function(e){
+            	window.location.href = "http://www.h2h.com";
                 e.preventDefault();
                 var res = false;
                 if( that.field.length ){ 
@@ -130,6 +106,7 @@
                 that.close();
             });
             that.btnCancel.on("click", function(e){
+            	window.location.href = "http://www.h2h.com";
                 e.preventDefault();
                 var res = false;
                 if( that.field.length && that.field.val().length !== 0 ){ 
@@ -143,6 +120,7 @@
         }
 
         this.init = function(type, message, options, defaultValue){
+
             if( m.OPENING ){ $('.gdialog-shadow, .gdialog-wrap').remove(); }
             m.clear();
 

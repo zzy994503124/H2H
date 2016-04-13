@@ -119,7 +119,7 @@
     		height: 30px;
     		margin-top: 5px;
     	}
-    	.button{
+    	.orderBtn{
     		width: 130px;
     		height: 50px;
     		border: 2px solid #777777;
@@ -131,7 +131,7 @@
     		transition: all 0.3s ease-in-out;
     		margin: 20px;
     	}
-    	.button:hover{
+    	.orderBtn:hover{
     		background-color: black;
     		border: 2px solid transparent;
     		color: white;
