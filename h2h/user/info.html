@@ -5,61 +5,32 @@
         <title>Information</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/exhibition.css">
-        <script type="text/javascript" src="js/sell.js"></script>
+        <link rel="stylesheet" href="css/info.css" />
     </head>
     <body>
-        <p id="top"></p>
-        <form >
-        
-        
- 
-        <table align="center">
-		
-		   <td><img class="imag1" src="Images/LOGO.png" /></td>
-           
-		   
-		       <tr>
-		       <!--¥” ˝æ›ø‚∂¡»° ÈµƒÕº∆¨–≈œ¢-->
-               <td><img src="book/a.jpg" class="imag2"/></td>
-			  
-			   <div>
-               <td>
-			   <!--¥” ˝æ›ø‚∂¡»° È√˚-->
-			   <span id="bookname">Book Name:</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»°◊˜’ﬂ-->
-			   <span id="author">Author:</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»°∞Ê±æ-->
-			   <span id="edition">Edition:</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»°≥ˆ∞Ê…Á-->
-			   <span id="publishcompany">Publishing Company:</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»°√øÃÏµƒ◊‚”√º€∏Ò-->
-			   <span id="rentprice">Rent Price/day:$20/per</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»°◊‚”√ÃÏ ˝-->
-			   <span id="time">Time/day:</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»° ÈµƒæﬂÃÂ–≈œ¢-->
-			   <span id="description">Description:</span><br/>
-			   <!--¥” ˝æ›ø‚∂¡»°∆¿¬€-->
-			   <span id="comment">Comment:</span><br/>
-			   
-			   <h3 onclick="AddtoCart('book/c')">Rent</h3>
-			   </td>
-			   </div>
-			   
-               </tr>
-			   <!--¥” ˝æ›ø‚∂¡»° ÈµƒÕº∆¨–≈œ¢-->
-			   <tr><td><img src="book/b.jpg" class="imag2"/></td></tr>
-			   <!--¥” ˝æ›ø‚∂¡»° ÈµƒÕº∆¨–≈œ¢-->
-			   <tr><td><img src="book/c.jpg" class="imag2"/></td><tr>
-          
-       </table>
-        
-           <input hidden="hidden" value='' id='infor' name='infor'/>
-		   
-         <a href="card.html"><img src="Images/card.png" id="card"/></a>
-         <a href="welcome.html"><img id="backimage" src="Images/backToMain.png" alt="Back to Main"></a>
-         <a href='contactUs.html'><img id='mail' src='Images/mail.png' alt="mail"/></a>
-		 
-        </form>
+		<header>
+			<a><img src="img/LOGO1.png"></a>
+		</header>
+		<div id="content" >
+			<div id="detail">
+				<!--‰π¶Âêç-->
+				<h1>CANDYLAND - THE BOOK</h1>
+				<!--ÁßüÈáë-->
+				<h2>‚Ç¨25.00/d</h2>
+				<!--ËøôÈáåÊîæËØ¶ÁªÜ‰ªãÁªç-->
+				<article>
+					ËØ¶ÁªÜ‰ªãÁªç„ÄÇ„ÄÇ„ÄÇ
+				</article>
+				<a href="Order.html">
+					<p>Áßü      ‰π¶</p>
+				</a>
+			</div>
+			<div id="bookPicture" class="clearfix">
+				<!--ÂõæÁâáurl-->
+				<img src="img/a.jpg"/>
+				<img src="img/b.jpg"/>
+			</div>
+		</div>
+		<a href="index.html" id="back"><p>Ëøî Âõû È¶ñ È°µ</p></a>
     </body>
 </html>
