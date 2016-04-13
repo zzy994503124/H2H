@@ -88,7 +88,7 @@
 			document.getElementById("totalPrices").innerHTML = sumPrice;
 		}
 		function gotoHome(){
-			window.location.href="index.html";
+			window.location.href="www.h2h.com";
 		}
 	</script>
 </html>
