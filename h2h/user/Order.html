@@ -1,63 +1,56 @@
 <html>
-<head>
-
-<link href="css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
-<script type="text/javascript">
-</script>
-</head>
+	<head>	
+		<link href="css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="css/order.css" />
+		<meta charset="utf-8"/>
+	</head>
+	
+	
 <body>
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span12" align ="center">
-			<img style="text-align:center" alt="140x140" src="pics/LOGO.png" />
-			<p><B>Checkout </B>
-			<span > </span>
-			<button class="btn btn-link btn-large" type="button">Back</button>
-			</p>
-			<h3 class="text-center"><B>SHIPPING</B></h3>
-			<br />
-			<h3 class="text-center"><B>SUMMARY</B></h3>
-			<table class="table">
-				<thead>
-					<tr>
-						<th width="200">Product</th>
-						<th width="200">Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Data Structure</td>
-						<td>0.5</td>
-					</tr>
-					<tr>
-						<td>Subtotal</td>
-						<td>2.00</td>
-					</tr>
-					<tr>
-						<td>Shipping</td>
-						<td>Free</td>
-					</tr>
-					<tr>
-						<td>Total</td>
-						<td>2.00</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<textarea placeholder="Notes or instructions(optional)" width="400"></textarea>
-	<br />
-<br />
-	<form>
-		<fieldset class="text-center">
-			<legend contenteditable="true"><B>CONTACT INFORMATION </B></legend> 
-			<input class="form-control" placeholder="Name" type="text" /><br />
-			<input class="form-control" placeholder="Phone Number" type="text" /><br />
-			<input class="form-control" placeholder="Address" type="text" /><br />
-			<button class="btn" contenteditable="true" type="submit">Submit</button>
-			<button class="btn" contenteditable="true" >Cancel</button></fieldset>
-	</form>
-</div>
-</div>
-</div>
+	<header>
+		<a href="#"><img src="img/LOGO1.png"></a>
+	</header>
+	<div class="content">		
+			<div class="summary">
+				<div class="title">
+					<h1>支  付</h1>
+					<a href="info.html">返  回</a>		
+				</div>									
+				<table class="table" id="orderTable">
+					<h2>订单详情</h2>
+					<thead>
+						<tr>
+							<th>书目</th>
+							<th>租金(￥/天)</th>
+							<th>天数</th>
+							<th>小计(￥)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Data Structure</td>
+							<td>0.5</td>
+							<td><input type="text" value="4"/></td>
+							<td>2.00</td>
+						</tr>
+						<tr>
+							<td colspan="3">Total</td>
+							<td>2.00</td>
+						</tr>
+					</tbody>
+				</table>	
+				<textarea id="comment" placeholder="备注"></textarea>
+			</div>
+			<form id="cotactInfo">
+				<fieldset class="text-center">
+					<h2>联系信息</h2> 
+					<input class="form-control" placeholder="姓名" type="text" id="name"/>
+					<input class="form-control" placeholder="手机号码" type="text" id="phoneNumber"/><br />
+					<input class="form-control" placeholder="地址" type="text" id="address"/><br />
+					<button  class="button" type="submit" id="submit">提  交</button>
+					<button  class="button" id="cancel">取 消</button>
+				</fieldset>
+			</form>		
+	</div>
 </body>
 </html>
