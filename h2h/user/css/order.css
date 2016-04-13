@@ -107,17 +107,19 @@
     	#name{
     		width: 25%;
     		height: 30px;
-    		margin-top: 10px;
+    		margin: 15px 0;
+    		display: inline-block;
     	}
     	#phoneNumber{
     		width: 25%;
     		height: 30px;
-    		margin-top: 10px;
+    		margin: 15px 0;
+    		display: inline-block;
     	}
     	#address{
     		width: 50%;
     		height: 30px;
-    		margin-top: 5px;
+    		margin: 10px auto 0 25%;
     	}
     	.orderBtn{
     		width: 130px;
@@ -138,10 +140,7 @@
     		cursor: pointer;
     	}
     	#submit{
-    		width: 22.5%;  		
-    		
-    		
-    		
+    		width: 22.5%;  		   		
     	}
     	#cancel{
     		width: 22.5%;

@@ -1,13 +1,7 @@
 <html>
-	<head>	
-		<link href="css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
-		
-		
-		<link href="view/src/normalize.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="view/src/animate.min.css">
-<link rel="stylesheet" href="view/src/jquery.gDialog.css">
-<link rel="stylesheet" href="css/order.css" />
-<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<head>			
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<meta charset="utf-8"/>
 
 	</head>
@@ -41,7 +35,7 @@
 							<td><span id = "sumPrice"></span></td>
 						</tr>
 						<tr>
-							<td colspan="3">Total</td>
+							<td colspan="3">总计</td>
 							<td><span id = "totalPrices">2.00</span></td>
 						</tr>
 					</tbody>
@@ -54,47 +48,47 @@
 					<input class="form-control" placeholder="姓名" type="text" id="name"/>
 					<input class="form-control" placeholder="手机号码" type="text" id="phoneNumber"/><br />
 					<input class="form-control" placeholder="地址" type="text" id="address"/><br />
-					<button  class="orderBtn demo" type="submit" id="submit"  data-toggle="modal" data-target=".bs-example-modal-sm">提  交</button>					
+					<button type="button" class="orderBtn" data-toggle="modal" data-target="#myModal" id="submit" onclick="">提  交</button>					
 					<button  class="orderBtn" id="cancel">取 消</button>
 				</fieldset>
 			</form>		
-			<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-				  <div class="modal-dialog modal-sm">
-				  <div class="modal-content">
-			      ...
-			   	  </div>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">交易成功</h4>
+				      </div>
+				      <div class="modal-body">
+				        订单号：123123123
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="gotoHome()">OK</button>		        
+				      </div>
+				    </div>
+				</div>
 			</div>
-</div>
+
 	</div>
 </body>
- 	<script src="view/src/jquery.js"></script>
-	<script src="view/src/jquery.gDialog.js"></script>
-	<script src="js/boostrap.min.js"></script>
+ 	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
      <script type="text/javascript">
-     $('.demo').click(function(){
-   	  $.gDialog.alert("订单编号：15978056", {
-   	    title: "交易成功",
-   	    animateIn: "bounceIn",
-   	    animateOut: "bounceOut"
-   	  })
-   	});
-     
-window.onload = function(){
-	var url = location.search;
-	var parameters =  url.split("=")[1];
-	var id = parameters.split("&price")[0];
-	var price = url.split("=")[2];
-
-	var number = document.getElementById("number").value;
-	//alert(number);
-	var sumPrice = price*number;
-	document.getElementById("price").innerHTML = sumPrice;
-	document.getElementById("sumPrice").innerHTML = sumPrice;
-	document.getElementById("totalPrices").innerHTML = sumPrice;
-}
-
-
-	
-
-		</script>
+		window.onload = function(){
+			var url = location.search;
+			var parameters =  url.split("=")[1];
+			var id = parameters.split("&price")[0];
+			var price = url.split("=")[2];
+		
+			var number = document.getElementById("number").value;
+			//alert(number);
+			var sumPrice = price*number;
+			document.getElementById("price").innerHTML = sumPrice;
+			document.getElementById("sumPrice").innerHTML = sumPrice;
+			document.getElementById("totalPrices").innerHTML = sumPrice;
+		}
+		function gotoHome(){
+			window.location.href="index.html";
+		}
+	</script>
 </html>
