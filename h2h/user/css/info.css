@@ -1,37 +1,8 @@
-
-        	a{
-        		text-decoration: none;
-        		outline: none;
-        	}
-        	header{
-        		width: 100%;
-        		height: 200px;
-        		position: relative;
-      			left: 0;
-      			top: 0;
-      			
-        	}
-        	header a{
-        		width: 370px;
-        		height: 135px;
-        		left: 40%;
-        		margin: 30px auto;
-        		position: absolute;
-        	}
-        	header a img{
-        		width: 320px;
-        		height: 115px;
-        		left: auto;
-        		position: absolute;
-        	}
-        	header a img:hover{
-        		cursor: pointer;
-        	}
-        	#content{
+     	    #content{
         		width: 100%;
         		height: auto;
         		position: relative;
-        		top: 0;       		
+        		top: 80px;       		
         	}
         	#content::after{
         		content: ".";
@@ -43,33 +14,33 @@
         	}
         	#detail{
         		width: 26%;
-        		height: 800px;
+        		height: auto;
         		position: relative;       		
-        		margin: 40px 0 40px 20%;
-        		float: left;
-        		
-        	
+        		margin: 40px 20% 40px 0;
+        		float: right;       	
         	}
         	#bookPicture{
         		width: 26%;
         		height: auto;
         		position: relative;
-        		margin: 40px 20% 40px 0;    
-        		float: right;		      		
+        		margin: 40px 0 40px 20%;    
+        		float: left;		      		
         	}
         	#detail h1{
-        		font-size: 30px;
+        		font-size: 35px;
         		width: 90%;
         		margin: 20px auto;
         		text-align: center;
         		text-transform: uppercase;
+        		font-family: "miniYinBiKaiShu";
         	}
         	#detail h2{
-        		font-size: 20px;
+        		font-size: 24px;
         		width: 90%;
         		text-align: center;
         		margin: 20px auto;
         		font-weight: 600;
+        		font-family: "miniYinBiXingShu";
         	}
         	#detail article{
         		width: 90%;
@@ -78,92 +49,45 @@
         		text-align: left;
         		font-size: 15px;
         	}
-        	#detail a{
-        		width: 170px;
-        		height: 50px;
-        		display: block;
-        		border: 2px solid #777777;
-        		background-color: #FFFFFF;
-        		margin: 20px;
-        		text-align: center;
+        	#detail article ul{
+        		width: auto;
+        		height: auto;
+        		list-style: none;
+        		padding-right: 40px;
+        		position: relative;
+        	}
+        	#detail article ul li{
+        		width: auto;
+        		height: auto;
+        		position: relative;
+        	}
+			#detail article ul li h3{
+        		font-family: "MFYueHei_Noncommercial-Regular";
         		font-size: 20px;
         		font-weight: 600;
-        		font-family:"YouYuan";
-        		transition: all 0.4s ease-in-out;
+        		display: inline-block;        		
         	}
-        	#detail a p{
-        		width: 170;
-        		height: 50px;
-        		margin: 0;
-        		line-height: 50px;
+        	#detail article ul li>span{
+        		font-family: "MFYueHei_Noncommercial-Regular";
+        		font-size: 15px;
+        		font-weight: 300;  
+        		display: inline-block; 
+        		position: absolute;
+        		vertical-align: middle;
+        		right: 0;   
+				margin: 20px 0;	
         	}
-        	#detail a:hover{
-        		color: white;
-        		cursor: pointer;
-        	}
-        	#detail a:link{
-        		color: black;
-        	}
-        	#detail a:visited{
-        		color: black;
-        	}
-        	#detail a:hover{
-        		color: white;
-        	}
-        	#detail a#back:active{
-        		color: white;
-        	}
-        	#detail a:hover{
-        		border: 2px solid transparent;
-        		background-color: black;
-        		color: white;
-        		cursor: pointer;
+        	#detail article ul li p{
+        		width: calc(100% - 40px);
+        		height: auto;
+        		font-family: "MFYueHei_Noncommercial-Regular";
+        		font-size: 15px;
+        		font-weight: 300;   
+        		position: absolute;
+        		left: 40px;	
         	}
         	#bookPicture img{
         		width: 400px;
         		height: 400px;
         		margin: 10px auto;
-        	}
-        	a#back{
-        		width: 200px;
-        		height: 50px;
-        		display: block;
-        		position: relative;
-        		border: 2px solid #777777;
-        		background-color: #FFFFFF;
-        		margin: 30px auto;
-        		text-align: center;
-        		line-height: 50px;
-        		font-size: 20px;
-        		font-weight: 600;
-        		font-family:"YouYuan";
-        		transition: all 0.3s ease-in-out;
-        	}
-        	a#back p{
-        		width: 200px;
-        		height: 50px;
-        		margin: 0;
-        		line-height: 50px;
-        	}
-        	a#back:hover{
-        		background-color: black;
-        		border: 2px solid transparent;
-        		color: white;
-        		cursor: pointer;
-        	}
-        	a#back:hover{
-        		color: white;
-        		cursor: pointer;
-        	}
-        	a#back:link{
-        		color: black;
-        	}
-        	a#back:visited{
-        		color: black;
-        	}
-        	a#back:hover{
-        		color: white;
-        	}
-        	a#back:active{
-        		color: white;
         	}

@@ -98,17 +98,7 @@
 			font-family: "微软雅黑";
 			color:#ddd;
 		}
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		ul{
-			list-style: none;
-		}
-		a{
-			text-decoration: none;
-			cursor: pointer;
-		}
+
 		#main{
 			position: absolute;
 			background-color: white;

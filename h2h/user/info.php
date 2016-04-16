@@ -41,6 +41,7 @@
 		var id =  url.split("=")[1];
 		document.getElementById("img1").src = "img//books//" + id+"//2.jpg";
 		document.getElementById("img2").src = "img//books//" + id+"//3.jpg";
+		
 		<?php 
 		require_once dirname(__FILE__)."/../db/DBBooks.php";
 		$dbbooks = new DBBooks();
@@ -52,12 +53,13 @@
 		var bookName = <?php echo json_encode($bookInfos[0][0])?>;
 		var price = <?php echo json_encode($bookInfos[0][1])?>;
 		var description = <?php echo json_encode($bookInfos[0][2])?>;
+		
 		window.onload = function() {
 		document.getElementById("description").innerHTML = description;
 		document.getElementById("bookname").innerHTML = bookName;
 		document.getElementById("price").innerHTML = price;
 		
-	}
+		}
 	
 		function rent(){
 			var url = location.search;

@@ -2,6 +2,9 @@
 	<head>			
 		<link rel="stylesheet" href="css/order.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/common.css"/>
+        <link rel="stylesheet" href="css/jquery.datetimepicker.css"/>
+        
 		<meta charset="utf-8"/>
 
 	</head>
@@ -14,7 +17,7 @@
 	<div class="content">		
 			<div class="summary">
 				<div class="title">
-					<h1>支  付</h1>
+					<h1>结 算</h1>
 					<a href="info.html">返  回</a>		
 				</div>									
 				<table class="table" id="orderTable">
@@ -41,6 +44,19 @@
 					</tbody>
 				</table>	
 				<textarea id="comment" placeholder="备注"></textarea>
+                <br/>
+                <!--    租借时间          -->
+                <div class="datetimepicker"  data-date="16-04-2016" data-date-format="dd-mm-yyyy">
+                    <label>租借时间</label>
+                    <input id="startDate" size="16" type="text" class="form-control">
+                    
+                </div>
+                
+                <!--    归还时间          -->
+                <div class="datetimepicker"  data-date="16-04-2016" data-date-format="dd-mm-yyyy">
+                    <label>归还时间</label>
+                    <input id="endDate" size="16" type="text" class="form-control">
+                </div>
 			</div>
 			<form id="cotactInfo">
 				<fieldset class="text-center">
@@ -69,10 +85,13 @@
 				</div>
 			</div>
 
-	</div>
+	</div>   
 </body>
- 	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+ 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+   
      <script type="text/javascript">
 		window.onload = function(){
 			var url = location.search;
@@ -85,10 +104,15 @@
 			var sumPrice = price*number;
 			document.getElementById("price").innerHTML = sumPrice;
 			document.getElementById("sumPrice").innerHTML = sumPrice;
-			document.getElementById("totalPrices").innerHTML = sumPrice;
+			document.getEle
+            mentById("totalPrices").innerHTML = sumPrice;
+            //初始化日期选择器
+            
 		}
 		function gotoHome(){
 			window.location.href="/";
-		}
+        }
+        $('#startDate').datetimepicker();
+        $('#endDate').datetimepicker();
 	</script>
 </html>
