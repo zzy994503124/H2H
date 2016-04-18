@@ -80,7 +80,7 @@ class DBBooks
     	
     	$this->connect();
     	$bookId = (int)$id;
-        $sql = "SELECT bookName, rentPrice, description FROM book,book_rent where book.bookId = $id and book_rent.bookId = $id";
+        $sql = "SELECT bookName, rentPrice, bookDescription,bookNumber,publisher FROM book,book_rent where book.bookId = $id and book_rent.bookId = $id";
         //$sql = "SELECT * from book where bookId = $id";
       //  mysql_query("SET NAMES 'UTF8'");
      	$result = $this->conn->query($sql);
