@@ -75,6 +75,16 @@
     margin: 10px auto;
     position: relative;
 }
+.summary .datetimePicker .hint{
+    width: 100%;
+    height: auto;
+    margin: 5px auto;
+    position: absolute;
+    text-align: left;
+    color: red;
+    font-size: 12px;
+    visibility: hidden;
+}
 .summary .datetimePicker label{
     width: auto;
     height: auto;
@@ -84,10 +94,11 @@
     display: inline-block;
     position: absolute;
     left: 0;
+    vertical-align: middle;
 }
 .summary .datetimePicker input{
     width: 140px;
-    height: auto;
+    height: 25px;
     display: inline-block;
     position: absolute;
     right: 0px;
@@ -107,16 +118,28 @@
     color: rgb(88,88,88);
     letter-spacing: 5px;
 }
-#name{
+.nameContainer {
     width: 25%;
     height: 30px;
     margin: 15px 0;
     display: inline-block;
 }
-#phoneNumber{
-    width: 25%;
+.phoneNumContainer{
+     width: 25%;
     height: 30px;
     margin: 15px 0;
+    display: inline-block;
+}
+#name{
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    display: inline-block;
+}
+#phoneNumber{
+    width: 100%;
+    height: 30px;
+    margin: 0;
     display: inline-block;
 }
 #address{
@@ -142,6 +165,17 @@
     border: 2px solid transparent;
     color: white;
     cursor: pointer;
+}
+#cotactInfo .hint{
+    width: 50%;
+    height: 15px;
+    margin: 5px auto 0 25%;
+    text-align: left;
+    color: red;
+    font-size: 12px;
+    visibility: hidden;
+    font-family: "微软雅黑";
+    font-weight: 700;
 }
 #submit{
     width: 22.5%;  		   		
