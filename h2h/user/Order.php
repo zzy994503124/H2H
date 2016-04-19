@@ -3,16 +3,14 @@
 		<link rel="stylesheet" href="css/order.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/common.css"/>
-        <link rel="stylesheet" href="css/jquery.datetimepicker.css"/>
-        
+        <link rel="stylesheet" href="css/jquery.datetimepicker.css"/>       
 		<meta charset="utf-8"/>
-
 	</head>
 	
 	
 <body>
 	<header>
-		<a href="#"><img src="img/LOGO1.png"></a>
+		<a href="/"><img src="img/LOGO1.png"></a>
 	</header>
 	<div class="content">		
 			<div class="summary">
@@ -143,6 +141,12 @@
             var phoneNum = $('#phoneNumber').val();
             
             var success = true;
+            if(parseInt(rentDay)<=0){
+                $('#number').css("border","2px solid crimson");                
+                success = false;
+            }else{
+                $('#number').css("border","1px solid darkturquoise");
+            }
             //j检查是否为空
             if(isNull(name)){
                 $('.nameContainer').addClass("has-error");
@@ -159,7 +163,7 @@
                 success = false;
             }else{
                 $('.addressContainer').addClass("has-success").removeClass("has-error");
-                $('#address').css("border","2px solid darkturquoise");
+                $('#address').css("border","1px solid darkturquoise");
             }
             if(isNull(phoneNum)){
                 $('.phoneNumContainer').addClass("has-error"); 
@@ -174,7 +178,7 @@
                 $('.phoneNumContainer').addClass("has-success").removeClass("has-error");
                 $('#cotactInfo .hint').html("");                
                 $('#cotactInfo .hint').css("visibility","hideen");
-                $('#phoneNumber').css("border","2px solid darkturquoise");
+                $('#phoneNumber').css("border","1px solid darkturquoise");
             }           
             if(success){
                 $('#submit').attr("data-target","#myModal");

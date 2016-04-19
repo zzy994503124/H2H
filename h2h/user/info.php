@@ -15,7 +15,7 @@
     </head>
     <body>
 		<header>
-			<a href="index.html"><img src="img/LOGO1.png"></a>
+			<a href="/"><img src="img/LOGO1.png"></a>
 		</header>
 		<nav class="menu-container">
 			<div class="menu">
