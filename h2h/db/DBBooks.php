@@ -47,21 +47,7 @@ class DBBooks
      * 返回 数组 每个元素包含 书名 作者 图片文件夹路径
      * @param $ids id列表
      */
-    public function getSimpleInfo(){
-    	$this->connect();
-    	$sql = "SELECT bookNumber, rentPrice from book_rent";
-    	$result = $this->conn->query($sql);
-    	while ($row = mysqli_fetch_array($result))
-        	$rows[] = $row;
-        	return $rows;
-    	$this->disconnect();
-    }
-    /**
-     * 获取简略信息
-     * 返回 数组 每个元素包含 书名 作者 图片文件夹路径
-     * @param $ids id列表
-     */
-    public function getSimpleInfoById($id){
+    /*public function getSimpleInfoById($id){
     	$this->connect();
         $sql = "SELECT bookNumber, rentPrice from book_rent where bookId=$id";
         echo $sql;
@@ -69,7 +55,7 @@ class DBBooks
         $this->disconnect();
         return $result;
         
-    }
+    }*/
 
     /**
      * 获取详细信息
@@ -84,13 +70,19 @@ class DBBooks
         //$sql = "SELECT * from book where bookId = $id";
       //  mysql_query("SET NAMES 'UTF8'");
      	$result = $this->conn->query($sql);
-    	while ($row = mysqli_fetch_array($result))
-        	$rows[] = $row;
-    		//echo $result;
-    		//echo $sql;
-        	return $rows;
-        	//return implode("###",$rows);
-    	$this->disconnect();
+
+
+            while ($row = mysqli_fetch_array($result))
+                $rows[] = $row;
+       if(0 == $result->num_rows)
+        {
+            $rows[] =  null;
+        }
+            return $rows;
+            //return implode("###",$rows);
+            $this->disconnect();
+
+
     }
 
 
