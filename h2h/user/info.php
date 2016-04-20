@@ -37,7 +37,7 @@
 						</ul>
 					</li>
 					<li>
-                        <a href="www.h2h.com" id="homePage"><i class="icon-home"></i>主  页</a>
+                        <a href="/" id="homePage"><i class="icon-home"></i>主  页</a>
 					</li>
 				</ul>
 			</div>
