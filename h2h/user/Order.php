@@ -43,7 +43,8 @@
 				</table>	
 				<textarea id="comment" placeholder="备注"></textarea>
                 <br/>
-                <!--    租借时间          -->
+                <!--
+                
                 <div class="datetimepicker"  data-date="16-04-2016" data-date-format="dd-mm-yyyy">
                     <label for="startDate">租借时间</label>
                     <input id="startDate" size="16" type="text" class="form-control">
@@ -51,13 +52,14 @@
                     <p class="hint">aaaaa</p>
                 </div>
                 
-                <!--    归还时间          -->
+                
                 <div class="datetimepicker"  data-date="16-04-2016" data-date-format="dd-mm-yyyy">
                     <label for="endDate">归还时间</label>
                     <input id="endDate" size="16" type="text" class="form-control" readonly="true">
                     <br />
                     <p class="hint">aaaaa</p>
                 </div>
+                -->
 			</div>
 			<form id="cotactInfo">
 				<fieldset class="text-center">
