@@ -151,12 +151,13 @@ module.exports = function(grunt){
         copy: {
             main: {
                 files: [
-                    {expand: true,cwd: 'src',src: ['*'], dest: 'dist/', filter: 'isFile'},
-                    {expand: true,cwd: 'src/css',src: ['*'], dest: 'dist/css/', filter: 'isFile'},
-                    {expand: true,cwd: 'src/js',src: ['vender/*'], dest: 'dist/js/', filter: 'isFile'},
-                    {expand: true,cwd: 'src/font',src: ['*'], dest: 'dist/font/', filter: 'isFile'},
-                    {expand: true,cwd: 'src/js',src: ['*'], dest: 'dist/js/', filter: 'isFile'},
-                    {expand: true,cwd: 'src/css',src: ['vender/*'], dest: 'dist/css/', filter: 'isFile'},// 复制path目录下的所有文件
+                    //{expand: true,cwd: 'src',src: ['*'], dest: 'dist/', filter: 'isFile'},
+                    //{expand: true,cwd: 'src/css',src: ['*'], dest: 'dist/css/', filter: 'isFile'},
+                    //{expand: true,cwd: 'src/js',src: ['vender/*'], dest: 'dist/js/', filter: 'isFile'},
+                    //{expand: true,cwd: 'src/font',src: ['*'], dest: 'dist/font/', filter: 'isFile'},
+                    //{expand: true,cwd: 'src/js',src: ['*'], dest: 'dist/js/', filter: 'isFile'},
+                    //{expand: true,cwd: 'src/css',src: ['vender/*'], dest: 'dist/css/', filter: 'isFile'},
+					{expand: true,cwd: 'src',src: ['logic/*'], dest: 'dist/'}// 复制path目录下的所有文件
                 ]
             }
         }
