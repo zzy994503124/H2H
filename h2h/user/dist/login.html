@@ -5,6 +5,9 @@
 <title>登陆丨H2H</title>
 <!--    <link rel="stylesheet" href="css/login_register/login.css">-->
 <link rel="stylesheet" href="css/login_register/login_register.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login_register/xcConfirm.css"/>
+
+
 <body>
 
 <div class="login-container">
@@ -26,10 +29,12 @@
 			<input id="identifyingCode" type="identifyingCode" name="identifyingCode" class="identifyingCode" placeholder="验证码" oncontextmenu="return false" onpaste="return false" />
 		</div>
 		<div>
-			<img id="identifyingCodeImg" src="img/idCodeImg.png"/>
+			<img id="identifyingCodeImg" src="security/verifyCode.php" onclick="document.getElementById('identifyingCodeImg').src='security/verifyCode.php' "/>
+			
+
 			<span id="tips">点击图片更换验证码</span>
 		</div>
-		<button id="submit" type="submit">登 陆</button>
+		<button id="loginsubmit" type="submit">登 录</button>
 	</form>
 
 	<a href="register.html">
@@ -49,4 +54,13 @@
 <script src="js/vender/supersized-init.js"></script>
 <!--表单验证-->
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
+<script>
+	$('#loginsubmit').click(function(){
+		if(true){
+			window.location.href = "index.html";
+		}else{
+			alert("登录失败！");
+		}
+	});
+</script>
 </html>

@@ -20,11 +20,11 @@ jQuery(function($){
         // 组件
         slide_links        : 'blank',    // 个别环节为每张幻灯片（选项：假的，'民'，'名'，'空'）
         slides             : [    // 幻灯片影像
-                                 {image : './img/1.jpg'},
-                                 {image : './img/2.jpg'},
-                                 {image : './img/3.jpg'},
-								 {image : './img/4.jpg'},
-								 {image : './img/5.jpg'}
+//                               {image : './img/bg1.jpeg'},
+                                 {image : './img/bg.jpeg'},
+//                               {image : './img/bg3.jpg'},
+//								 {image : './img/bg4.jpg'},
+//								 {image : './img/bg5.jpg'}
                        ]
 
     });

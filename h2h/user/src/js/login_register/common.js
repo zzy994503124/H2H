@@ -93,4 +93,6 @@ $(document).ready(function(){
 		var email_number = /^\d{8}@bjtu.edu.cn$/;
 		return this.optional(element) || (length === 20 && email_number.test(value));
 	}, "必须是校内邮箱");
+	
+	
 });
