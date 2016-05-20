@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__)."/../../db/DBBooks.php";
+require_once dirname(__FILE__)."/../../../db/DBBooks.php";
 $dbbooks = new DBBooks();
 $bookInfos = $dbbooks->getBookIds();
 $simpleInfos = $dbbooks->getSimpleInfo();

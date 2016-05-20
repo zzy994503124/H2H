@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 
-<!--
 	<link rel="stylesheet" href="css/index/magic.min.css" />
 	<link rel="stylesheet" href="css/index/home.css" />
     <link rel="stylesheet" href="css/index/carrousel.css">
--->
 	<link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index/index.min.css">
+    <!--<link rel="stylesheet" href="css/index/index.min.css">-->
 	<script type="text/javascript" src="logic/getBooks.php">
 	</script>
 <title>首页</title>
@@ -33,7 +31,7 @@
 					</li>
 				</ul>			
 			</section>
-			<div class="banner">
+			<!--<div class="banner">
 				<section id="dg-container" class="dg-container">
 					<div class="dg-wrapper">
 						<a href="info.html?bookid=00000002" link="">
@@ -51,7 +49,7 @@
 						<a href="info.html?bookid=00000002" link="">
 							<img src="img/5.jpg">
 						</a>
-						<!-- ... -->
+						
 					</div>
 					<ol class="button" id="lightButton">
 						<li index="0">
@@ -59,14 +57,14 @@
 						<li index="2">
 						<li index="3">
 						<li index="4">
-							<!-- ... -->
+						
 					</ol>
 					<nav>
 						<span class="dg-prev"></span>
 						<span class="dg-next"></span>
 					</nav>
 				</section>
-			</div>
+			</div>-->
 			<section class="bookItems ">
 				<div class="container">
 				
@@ -294,10 +292,7 @@
 		
 	</footer>
 	<script src="js/vender/jquery.1.10.2.min.js"></script>
-<!--
-	<script src="js/index/main.js"></script>
-    <script src="js/index/carrousel.js"></script>
--->
+
     <script src="js/index/index.min.js"></script>
 </body>
 <script type="text/javascript">
@@ -317,7 +312,8 @@
 			document.getElementById("stock"+j).innerHTML = bookstocks[i];
 			document.getElementById("publisher"+j).innerHTML = publishers[i];
 			document.getElementById("bookname"+j).innerHTML = bookNames[i];
-			document.getElementById("img"+j).src = "img//books//" + bookIds[i]+"//1.jpg";
+			document.getElementById("img"+j).src = "//h2h.com//img//books//" + bookIds[i]+"//1.jpg";
+			//document.getElementById("img8").src = "img//books//00000001//1.jpg";
 			}
 			
 	}
