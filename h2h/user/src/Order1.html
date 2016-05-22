@@ -59,7 +59,7 @@
                     </div>
 					<div class="confirmCodeContainer">
                         <input class="form-control" placeholder="验证码" type="text" id="confirmCode"/>
-                        <button id="sendConfirmCode"  class="btn btn-default" onclick="sendCode()">发送验证码</button>
+                        <button id="sendConfirmCode"  class="btn btn-default">发送验证码</button>
                     </div>
                     <p class="hint">aaaaa</p>
 					<button type="button" class="orderBtn" data-toggle="modal" data-target="" id="submit" onclick="">提  交</button>					
@@ -88,41 +88,43 @@
  	<script src="js/vender/jquery-1.11.0.min.js"></script>
 	<script src="js/vender/bootstrap.min.js"></script>
     <script src="js/vender/jquery.js"></script>
+<!--    <script src="js/order/order.js"></script>-->
     <script src="js/order/order.min.js"></script>
     <script type="text/javascript">
-
-    	var code;
     
-    	/**
-    	根据code来判断验证码是否正确
-    	*/
-        function sendCode(){
-    		
-    		//异步发送验证码
-        	var mobilenumber = document.getElementById("phoneNumber").value;
-        	var xmlHttp;
-        	if(mobilenumber.length == 0)
-        		{
-        		alert("请输入手机号");
-        		}
-        	if(window.XMLHttpRequest)
-        		{
-        		xmlHttp = new XMLHttpRequest();
-        		}
-        	else{
-        		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-        	}
-        	xmlHttp.onreadystatechange=function()
-        	  {
-        	  if (xmlHttp.readyState==4 && xmlHttp.status==200)
-        	    {
-        	    }
-        	  }
-        	code = Math.floor(Math.random() * 8999 + 1000);
-        	xmlHttp.open("GET","security/checkSMSCode.php?m="+mobilenumber+"&code="+code,true);
-        	xmlHttp.send();
-        	}
-        
+    var code;
+    
+	/**
+	根据code来判断验证码是否正确
+	*/
+    function sendCode(){
+		
+		
+		//异步发送验证码
+    	var mobilenumber = document.getElementById("phoneNumber").value;
+    	var xmlHttp;
+    	if(mobilenumber.length == 0)
+    		{
+    		alert("请输入手机号");
+    		}
+    	if(window.XMLHttpRequest)
+    		{
+    		xmlHttp = new XMLHttpRequest();
+    		}
+    	else{
+    		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    	}
+    	xmlHttp.onreadystatechange=function()
+    	  {
+    
+    	  if (xmlHttp.readyState==4 && xmlHttp.status==200)
+    	    {
+    		  
+    	    }
+    	  }
+    	code = Math.floor(Math.random() * 8999 + 1000);
+    	xmlHttp.open("GET","security/checkSMSCode.php?m="+mobilenumber+"&code="+code,true);
+    	xmlHttp.send();
+    	}
 	</script>
-	
 </html>
