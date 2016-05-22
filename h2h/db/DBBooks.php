@@ -94,8 +94,6 @@ class DBBooks
             return $rows;
             //return implode("###",$rows);
             $this->disconnect();
-
-
     }
 
 
