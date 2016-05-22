@@ -68,6 +68,6 @@ label.error{display: block; -webkit-transition: border-color .15s ease-in-out,bo
     cursor: default;
 }
 img#logo { 
-   width: 250px; //控制图片的宽度
-   height: 250px; //控制图片的高度
+   width: 350px; 
+   height: auto; 
 } 
