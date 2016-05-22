@@ -56,8 +56,18 @@
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
 	$('#loginsubmit').click(function(){
+		//verify用来判断验证码是否正确
+		var verify = false;
+		var verifyCode = document.getElementById("identifyingCode").value;
+		$.post("logic/checkLogin.php",{code:verifyCode},function(msg){
+			if(msg==1)
+			{
+				varify = true;
+				alert("验证码正确");
+			}
+		});
 		if(true){
-			window.location.href = "index.html";
+			//window.location.href = "index.html";
 		}else{
 			alert("登录失败！");
 		}

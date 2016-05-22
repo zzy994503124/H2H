@@ -57,8 +57,20 @@
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
 	$('#registersubmit').click(function(){
+		
+		//verify用来判断验证码是否正确
+		var verify = false;
+		var verifyCode = document.getElementById("identifyingCode").value;
+		alert(verifyCode);
+		$.post("logic/checkVerifyCode.php",{code:verifyCode},function(msg){
+			if(msg==1)
+			{
+				varify = true;
+				alert("验证码正确");
+			}
+		});
 		if(true){
-			window.location.href = "registerConfirm.html";
+			//window.location.href = "registerConfirm.html";
 		}else{
 			
 		}
