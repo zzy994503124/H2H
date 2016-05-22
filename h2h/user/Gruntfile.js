@@ -119,7 +119,7 @@ module.exports = function(grunt){
                 },
                 // '**' 表示包含所有的子目录
                 // '*' 表示包含所有的文件
-                files: ['src/*', 'src/css/*', 'src/js/*', 'src/img/**/*']
+            
             }
         },
         //uncss: {

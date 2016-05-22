@@ -28,7 +28,7 @@ $('#submit').click(function(){
 
     var success = true;
     if(parseInt(rentDay)<=0){
-        $('#number').css("border","2px solid crimson");
+        $('#number').css("border","1px solid crimson");
         success = false;
     }else{
         $('#number').css("border","1px solid darkturquoise");
@@ -36,16 +36,16 @@ $('#submit').click(function(){
     //j检查是否为空
     if(isNull(name)){
         $('.nameContainer').addClass("has-error");
-        $('#name').css("border","2px solid crimson");
+        $('#name').css("border","1px solid crimson");
         success = false;
     }
     else{
         $('.nameContainer').addClass("has-success").removeClass("has-error");
-        $('#name').css("border","2px solid darkturquoise");
+        $('#name').css("border","1px solid darkturquoise");
     }
     if(isNull(address)){
         $('.addressContainer').addClass("has-error");
-        $('#address').css("border","2px solid crimson");
+        $('#address').css("border","1px solid crimson");
         success = false;
     }else{
         $('.addressContainer').addClass("has-success").removeClass("has-error");
@@ -53,9 +53,9 @@ $('#submit').click(function(){
     }
     if(isNull(phoneNum)){
         $('.phoneNumContainer').addClass("has-error");
-        $('#phoneNumber').css("border","2px solid crimson");
+        $('#phoneNumber').css("border","1px solid crimson");
         success =false;
-    }else if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phoneNum))){
+    }else if(!(/^(13[0-9]{9})|(15[89][0-9]{8})$/.test(phoneNum))){
         $('.phoneNumContainer').addClass("has-error");
         $('#cotactInfo .hint').html("* 手机号码格式不对！");
         $('#cotactInfo .hint').css("visibility","visible");
