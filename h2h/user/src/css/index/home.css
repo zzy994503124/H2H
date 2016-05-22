@@ -117,8 +117,8 @@ a.link {
 	margin: 3% 5%;
 }
 #logo{
-	width: 250px;
-	height: 80px;
+	width: 350px;
+	height: auto;
 	position: relative;
 	left: 0;
 	bottom: 0;

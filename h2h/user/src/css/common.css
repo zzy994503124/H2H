@@ -14,20 +14,18 @@ header{
     position: relative;
     left: 0;
     top: 0;
-
+    text-align: center;
 }
 header a{
     width: 370px;
-    height: 135px;
+    height: 100%;
     left: 40%;
-    margin: 30px auto;
+    margin: auto;
     position: absolute;
 }
 header a img{
-    width: 320px;
-    height: 115px;
-    left: auto;
-    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 header a img:hover{
     cursor: pointer;

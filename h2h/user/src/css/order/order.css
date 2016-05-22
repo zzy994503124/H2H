@@ -13,29 +13,46 @@
     left: 0;
 }
 .summary .title{
-    width: 50%;
+    width: 70%;
     height: auto;
-    text-align: center;
+    text-align: right;
     margin: 0 auto 30px;
 }
-.summary .title h1{   		
-    font-size: 20px;
-    font-family: "miniYouXian";
-    font-weight: 700;
-    display: inline-block;
-    margin: 0 160px 0 -40px;
-    color: #000000;
+.summary .title ul{
+    display: block;
+    width: 100%;
+    
 }
-.summary .title a{   		
-    font-size: 18px;
+.summary .title ul li{
+    display: inline-block;
+    width: 15%; 
+    text-align: center; 
+}
+.processName li span{
+    color: rgb(88,88,88);
+    font-size: 16px;
+    font-weight: 700;
     font-family: "miniYouXian";
-    font-weight: 300;
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+}
+.processNum li span{
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+    color: rgb(60, 60, 60);
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid rgb(60, 179, 113);
+    border-radius: 14px;
+    background-color: #FFFFFF;
+}
+.processNum li span.curNum{
+    color:#fff;
+    background-color: rgb(60, 179, 113);
 }
 .summary .table{
-    width: 50%;
+    width: 70%;
     height: auto;
     margin: 0 auto;
 }
@@ -48,11 +65,20 @@
     letter-spacing: 5px;
     margin: 30px auto;
 }
-.summary #comment{
-    width: 50%;
-    height: auto;
-    min-height: 80px;
+.return{
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #777777;
+    font-weight: 600;
+}
+#comment{
+    width: 62%;
+    height: 30px;
+    margin-left: 10px;
     margin-top: 30px;
+    border: 1px solid #777777;
+    border-radius: 2px;
 }
 .summary .table thead tr th:nth-child(1){
     width: 40%;
@@ -69,66 +95,36 @@
 .summary .table tbody tr td:nth-child(3) input{
     width: 80px;
 }
-.summary .datetimePicker{
-    width: 50%;
-    height: 50px;
-    margin: 10px auto;
-    position: relative;
-}
-.summary .datetimePicker .hint{
-    width: 100%;
-    height: auto;
-    margin: 5px auto;
-    position: absolute;
-    text-align: left;
-    color: red;
-    font-size: 12px;
-    visibility: hidden;
-}
-.summary .datetimePicker label{
-    width: auto;
-    height: auto;
-    font-size: 18px;
-    font-family: "miniYouXian";
-    font-weight: 700;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    vertical-align: middle;
-}
-.summary .datetimePicker input{
-    width: 140px;
-    height: 25px;
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-}
-.summary .datetimePicker input + span{
-    width: auto;
-    height: auto;
-    display: inline-block;
-    position: absolute;
-    right: 150px;
-    top: 10px;
-}
+
 #cotactInfo h2{
     font-size: 25px;
     font-family: "MFYueHei_Noncommercial-Regular";
     font-weight: 400;
     color: rgb(88,88,88);
     letter-spacing: 5px;
+    text-align: center;
 }
 .nameContainer {
-    width: 25%;
+    width: 50%;
     height: 30px;
-    margin: 15px 0;
-    display: inline-block;
+    margin: 15px auto;
+    display: block;
 }
 .phoneNumContainer{
-     width: 25%;
+     width: 50%;
     height: 30px;
-    margin: 15px 0;
-    display: inline-block;
+    margin: 15px auto;
+    display: block;
+}
+.addressContainer{
+    height: 30px;
+    margin: 15px auto 5px;
+    display: block;
+}
+.confirmCodeContainer{
+    height: 50px;
+    margin: 0 auto;
+    display: block;
 }
 #name{
     width: 100%;
