@@ -62,7 +62,7 @@
 		var verify = false;
 		var verifyCode = document.getElementById("identifyingCode").value;
 		alert(verifyCode);
-		$.post("logic/checkVerifyCode.php",{code:verifyCode},function(msg){
+		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
 			if(msg==1)
 			{
 				varify = true;

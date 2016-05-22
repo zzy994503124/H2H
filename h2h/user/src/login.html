@@ -59,7 +59,7 @@
 		//verify用来判断验证码是否正确
 		var verify = false;
 		var verifyCode = document.getElementById("identifyingCode").value;
-		$.post("logic/checkLogin.php",{code:verifyCode},function(msg){
+		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
 			if(msg==1)
 			{
 				varify = true;
