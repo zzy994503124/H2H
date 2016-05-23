@@ -6,7 +6,7 @@
  * Date: 2016/4/10
  * Time: 12:08
  */
-class DBUsers
+class DBCart
 {    
 	private $conn = null;
     public function connect()
@@ -29,7 +29,7 @@ class DBUsers
  * @param unknown $username
  * @param unknown $userpsd
  */
-    public function insertUser($email,$username,$userpsd){
+    public function getCart($email,$username,$userpsd){
     	$this->connect();
     	$sql = "insert into usr(usereEmail, userPsd, username) values ('$email','$userpsd','$username')";
     	$result = $this->conn->query($sql);
