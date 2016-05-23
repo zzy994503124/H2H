@@ -33,10 +33,15 @@
 						<li><span>4</span></li>
 						<li><span>5</span></li>
 					</ul>
-				</div>								
+				</div>		
+				<div class="orderInfoDetail">
+						<h2>订单详情</h2>
+						<a href="info.html" class="return">返  回</a>		
+				</div>	
+								
 				<table class="table" id="orderTable">
-				<h2>订单详情</h2>
-				<a href="info.html" class="return">返  回</a>
+					
+				
 				<thead>
 					<tr>
 						<th>书目</th>
@@ -77,11 +82,11 @@
                     </div>
 					<div class="confirmCodeContainer">
                         <input class="form-control" placeholder="验证码" type="text" id="confirmCode"/>
-                        <button id="sendConfirmCode"  class="btn btn-default" onclick="sendCode()">发送验证码给手机</button>
+                        <button type="button" id="sendConfirmCode"  class="btn btn-default" onclick="sendCode()">发送验证码给手机</button>
                     </div>
                     <p class="hint">aaaaa</p>
-					<button type="button" class="orderBtn" data-toggle="modal" data-target="" id="submit" onclick="">提  交</button>					
-					<button  class="orderBtn" id="cancel">取 消</button>
+					<button type="button" class="orderBtn" data-toggle="modal" data-target="" id="submit">提  交</button>					
+					<button  type="button" class="orderBtn" id="cancel">取 消</button>
 				</fieldset>
 			</form>
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

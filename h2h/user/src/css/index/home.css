@@ -7,31 +7,37 @@
 }
 
 .box {
-	width:21.9%;
-	height:31%;
-	margin:2% 1% 7%;
+	width:16%;
+	height:30%;
+	margin:2% 4% 7%;
 	display: inline-block;
 	position: relative;
 }
 .box article{
 	width: 100%;
-	height: auto;
+	height: 80px;
+	margin-top: -19px;
+	background:rgb(123,198,32);
+	text-align: center;
 }
 .box article h1{
 	width: 100%;
+	font-family: "微软雅黑";
 	height: auto;
-	font-size: 25px;
-	color: rgb(38,66,141);
-	text-align: left;
+	font-size: 20px;
+	color: #FFF;
+	text-align: center;
+	font-weight: 600;
 }
 .box article h2{
 	width: 100%;
 	height: auto;
-	color: rgb(38,66,141);
-	text-align: left;
+	color: #FFF;
+	text-align: center;
 	font-family: Alegreya, serif;
 	font-size: 16px;
 	font-weight: bold;
+	font-family: "微软雅黑";
 }
 .box-content {
 	display:block;
@@ -57,6 +63,7 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	top: 0;
 	left: 0;
 	z-index: 5;
 }
@@ -123,14 +130,15 @@ a.link {
 	position: relative;
 	height: 15%;
 	width: 100%;
-	margin: 0;
+	margin: 0 0 40px;
 	padding: 0;
+	background-color: rgb(249, 249, 249);
 }
 #title ul{
 	width: 150px;
 	position: absolute;
-	right: 15px;
-	bottom: 0;
+	right: 50px;
+	bottom: 20px;
 	display: inline-block;
 
 }
@@ -142,7 +150,6 @@ a.link {
 	font-size: 17px;
 	margin:0;
 	width: 40%;
-
 	position: relative;
 }
 #title ul li a{
@@ -161,16 +168,33 @@ a.link {
 #title ul li a:hover{
 	color: rgb(38,66,141);
 }
-
+.recommend{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.recommend h1{
+	font-family: "微软雅黑";
+	display: inline-block;
+	color: rgb(127,127,127);
+	font-weight: 400;
+}
+.recommend span{
+	width: 85%;
+	height: 3px;
+	background-color: rgb(195,195,195);
+	display: inline-block;
+	margin-left: 6%;
+}
 .bookItems{
 	position: relative;
     display: block;
 	top: 0;
 	bottom: 0;
 	width: 100%;
-	height: 800px;
+	height: 1000px;
 	margin-top: 0;
 	padding: 0;
+	background-color: rgb(249, 249, 249);
 }
 .bookItems ul{
 	width: 100%;
@@ -197,7 +221,7 @@ a.link {
 }
 .inner {
 	width: 100%;
-	margin: 0 auto;background: #0dcecb; overflow:hidden;
+	margin: 0 auto;background: rgb(226,245,169); overflow:hidden;
 }
 .load-container {
 	border: 1px solid rgba(255, 255, 255, 0.2);
@@ -320,4 +344,29 @@ a.link {
 	.load-container {
 		width: 100%;
 	}
+}
+footer{
+	width: 90%;
+	padding: 20px;
+	margin: 20px auto;
+	background-color: rgb(249, 249, 249);
+	color: rgb(0, 0, 0);
+	font-family: "微软雅黑";
+	font-weight: 300;
+	text-align: center;
+}
+footer ul{
+	display: block;
+	width: 100%;
+}
+footer ul li{
+	display: inline-block;
+	width: auto;
+	margin: 0 10px;
+}
+footer ul span{
+	display: inline-block;
+	width: 2px;
+	height: 10px;
+	background-color: #000;
 }
