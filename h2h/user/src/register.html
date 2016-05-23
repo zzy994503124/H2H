@@ -60,9 +60,10 @@ function check(){
 	//verify用来判断验证码是否正确
 	var verify = false;
 	var registersucess = true;
-	var format = true;
+	var format = false;
 	
 	//验证格式
+		format=true;
 	
 	if(format)
 		{
@@ -73,18 +74,26 @@ function check(){
 				varify = true;
 				alert("verify success");
 				
-				// check login info
+				// check register info
+				var email = document.getElementById("SignUpEmail").value;
+				var name = document.getElementById("username").value;
+				var password = document.getElementById("SignUpPW").value;
+
 				
-				if(!registersucess){
-					alert("user exists");
+				$.post("logic/checkRegister.php",{useremail:email,username:name,userpassword:password},function(msg)
+						{
 					
-				}
-				else{
-					alert("return ture");
-					document.registerForm.submit(); 
-					//return true;
-					//window.location.href = "index.html";
-				}
+							if(msg == 1)
+								{
+								
+								document.registerForm.submit(); 
+								}
+							else if(msg == 2)
+								{
+								alert("邮箱已存在");
+								}
+						});
+				
 			}
 			else{
 				alert("verify wrong");

@@ -8,10 +8,12 @@ foreach($bookInfos as $book)
 	$ids[] = $book['bookId'];
 	$bookNames[] = $book['bookName'];
 	$publisher[] = $book['publisher'];
+	$authors[] = $book['author'];
 }	
 $books = json_encode($ids);
 $names = json_encode($bookNames);
 $pbls = json_encode($publisher);
+$ats = json_encode($authors);
 
 foreach ($simpleInfos as $bookinfo)
 {
@@ -26,7 +28,10 @@ echo "var bookIds = new Array();
 	  booknames = $names;
 	  var publishers = new Array();
 	publishers = $pbls; 
-
+	
+	  var authors = new Array();
+	authors = $ats; 
+	
 	var bookPrices = new Array();
 	bookPrices = $Prices;
 	

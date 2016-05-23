@@ -293,6 +293,7 @@
 		publishers = publishers.toString().split(",");
 		bookpeices = bookPrices.toString().split(",");
 		bookstocks = bookStocks.toString().split(",");
+		bookauthors = authors.toString().split(",");
 		
 		
 		for(var i = 0; i < 8; i++)
@@ -302,8 +303,7 @@
 			document.getElementById("stock"+j).innerHTML = bookstocks[i];
 			document.getElementById("publisher"+j).innerHTML = publishers[i];
 			document.getElementById("bookname"+j).innerHTML = bookNames[i];
-			document.getElementById("img"+j).src="img//books//" + bookIds[i]+"//1.jpg";
-			//document.getElementById("img8").src = "img//books//00000001//1.jpg";
+			document.getElementById("img"+j).src="img//books//" + bookIds[i]+"//2.jpg";
 			}
 			
 	}
