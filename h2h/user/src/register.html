@@ -15,7 +15,7 @@
 		<p>Link the world. Share to world.</p>
 	</div>
 
-	<form action="" method="post" id="registerForm">
+	<form action="registerConfirm.html" method="post" id="registerForm" name = "registerForm">
 		<div>
 			<input id="SignUpEmail" type="email" name="email" class="email" placeholder="邮箱地址" oncontextmenu="return false" onpaste="return false" />
 		</div>
@@ -36,7 +36,7 @@
 			
 			<span id="tips">点击图片更换验证码</span>
 		</div>
-		<button id="registersubmit" type="submit">注 册</button>
+		<button id="registersubmit" type="button" onclick="check()">注 册</button>
 	</form>
 	<a href="login.html">
 		<button id="ToLogin" type="button" class="register-tis">已经有账号？</button>
@@ -56,24 +56,44 @@
 <!--表单验证-->
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
-	$('#registersubmit').click(function(){
-		
-		//verify用来判断验证码是否正确
-		var verify = false;
+function check(){
+	//verify用来判断验证码是否正确
+	var verify = false;
+	var registersucess = true;
+	var format = true;
+	
+	//验证格式
+	
+	if(format)
+		{
 		var verifyCode = document.getElementById("identifyingCode").value;
-		alert(verifyCode);
 		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
-			if(msg==1)
+			if(msg=="1")
 			{
 				varify = true;
-				alert("验证码正确");
+				alert("verify success");
+				
+				// check login info
+				
+				if(!registersucess){
+					alert("user exists");
+					
+				}
+				else{
+					alert("return ture");
+					document.registerForm.submit(); 
+					//return true;
+					//window.location.href = "index.html";
+				}
+			}
+			else{
+				alert("verify wrong");
+				document.getElementById("identifyingCodeImg").src='security/verifyCode.php';
 			}
 		});
-		if(true){
-			//window.location.href = "registerConfirm.html";
-		}else{
-			
+
 		}
-	});
+
+}
 </script>
 </html>

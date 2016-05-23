@@ -18,7 +18,7 @@
 		<p>Link the world. Share to world.</p>
 	</div>
 
-	<form action="" method="post" id="loginForm">
+	<form action="index.html" method="post" id="loginForm" name = "loginForm" >
 		<div>
 			<input id="LoginEmail" type="email" name="email" class="email" placeholder="邮箱地址" oncontextmenu="return false" onpaste="return false" />
 		</div>
@@ -34,7 +34,7 @@
 
 			<span id="tips">点击图片更换验证码</span>
 		</div>
-		<button id="loginsubmit" type="submit">登 录</button>
+		<button id="loginsubmit" type="button" onclick = "check()">登 录</button>
 	</form>
 	
 	<a href="register.html">
@@ -55,22 +55,53 @@
 <!--表单验证-->
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
-	$('#loginsubmit').click(function(){
+
+	function check(){
 		//verify用来判断验证码是否正确
 		var verify = false;
+		var loginsucess = true;
+		var format=true;    //表单格式
+		
+		
+		//判断其他信息是否正确
+		
+		
 		var verifyCode = document.getElementById("identifyingCode").value;
+		
+		
+		//判断格式
+		if(format)
+			{
+			
+			//判断验证码
 		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
-			if(msg==1)
+			if(msg=="1")
 			{
 				varify = true;
-				alert("验证码正确");
+				alert("verify success");
+				
+				// check login info
+				
+				//判断信息
+				if(!loginsucess){
+					alert("username or pass wrong");
+					
+				}
+				else{
+					alert("return ture");
+					document.loginForm.submit(); 
+					//return true;
+					//window.location.href = "index.html";
+				}
+				
+			}
+			else{
+				alert("verify wrong");
+				document.getElementById('identifyingCodeImg').src='security/verifyCode.php';
 			}
 		});
-		if(true){
-			//window.location.href = "index.html";
-		}else{
-			alert("登录失败！");
 		}
-	});
+
+	}
 </script>
 </html>
