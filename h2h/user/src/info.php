@@ -228,7 +228,7 @@
 			//判断是否已登陆
 			if(!login)
 				{
-					window.location.href = "login.html";
+				//跳转到登陆界面
 				}
 			else{
 				//从cookie获取邮箱，先假设为13301054@bjtu.edu.cn
