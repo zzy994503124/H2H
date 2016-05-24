@@ -47,6 +47,8 @@
 <script src="js/login_register/bgChange.js"></script>
 <script src="js/login_register/common.js"></script>
 -->
+<script src="js/vender/jquery.1.10.2.min.js"></script>
+<script src="js/vender/jquery.cookie.js"></script>
 <script src="js/login_register/login_register.min.js"></script>
 <!--背景图片自动更换-->
 <script src="js/vender/supersized.3.2.7.min.js"></script>
@@ -86,7 +88,10 @@
 					
 							if(msg == 1)
 								{
-								document.loginForm.submit(); 
+									var splitEmail = email.substring(0,8);
+									document.loginForm.submit(); 
+									$.cookie("login","true",{expires:1});
+									$.cookie("email",splitEmail+"",{expires:1});
 								}
 							else
 								{

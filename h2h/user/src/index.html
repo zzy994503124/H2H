@@ -282,12 +282,25 @@
 		</ul>
 	</footer>
 	<script src="js/vender/jquery.1.10.2.min.js"></script>
-
+	<script src="js/vender/jquery.cookie.js"></script>
     <script src="js/index/index.min.js"></script>
 </body>
 <script type="text/javascript">
 	//var bookIds = new Array();
 	window.onload = function() {
+		
+		//获取登录cookie
+		if($.cookie("login") == null){
+			
+		}
+		if($.cookie("login") == "true"){
+			$('#title ul li:nth-child(1) a').text($.cookie("email"));
+			$('#title ul li:nth-child(1) a').attr("href","#");
+			$('#title ul li:nth-child(2) a').text("退出");
+			$('#title ul li:nth-child(2) a').attr("href","#");
+			
+		}
+		
 		bookIds = bookIds.toString().split(",");
 		bookNames = booknames.toString().split(",");
 		publishers = publishers.toString().split(",");

@@ -12,6 +12,7 @@
 
 		<script src="js/vender/modernizr-2.8.3.min.js"></script>
 	    <script type="text/javascript" src="js/vender/jquery.min.js" ></script>
+		<script src="js/vender/jquery.cookie.js"></script>
     	<script type="text/javascript" src="js/vender/jquery.fly.min.js" ></script>
 		<link rel="stylesheet" href="css/vender/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/vender/font-awesome.min.css" />
@@ -19,7 +20,7 @@
 		<link rel="stylesheet" href="css/info/abprule.css" />
 		<link rel="stylesheet" href="css/info/csshide1.css" />
 
-		<!--<script src="js/vender/modernizr.js"></script>  Modernizr -->
+		<script src="js/vender/modernizr.js"></script>
 		
     </head>
     <body>
@@ -49,7 +50,7 @@
 					</li>
 					<li>
                         <!--用户名-->
-                        <a href="#" id="userName"><i class="icon-user"></i>周志勇</a>
+                        <a href="login.html" id="userName"><i class="icon-user"></i>请登录</a>
 						<ul>
 							<li><a href="#">个人信息</a></li>
 							<li><a href="#">历史订单</a></li>
@@ -149,7 +150,9 @@
 		</div>
     </body>
 
-    <script src="js/info/info.min.js"></script>
+    <script src="js/info/info.js"></script>
+	<script src="js/info/main.js"></script>
+	<script src="js/info/megamenu.js"></script>
      <script type="text/javascript">
 	//var bookIds = new Array();
 
@@ -189,66 +192,8 @@
 		}
 		
 		//获取订单
-		function getCart(){
-			$.post("logic/getCart.php",{email:useremail},function(msg)
-					{
-				//alert("enter cart");
-				if(msg == "null")
-					{
-					///alert("no books");
-					//购物车为空
-					}
-				else{
-					while(msg.indexOf("[")!= -1)
-						msg = msg.replace("[","");
-					while(msg.indexOf("]")!= -1)
-						msg = msg.replace("]","");
-					while(msg.indexOf("\"")!= -1)
-						msg = msg.replace("\"","");
-					var booknames = msg.toString().split("|")[0];
-					var prices = msg.toString().split("|")[1];
-					
-					var bookNames = booknames.toString().split(",");
-					var prs = prices.toString().split(",");
-					
-					//booknames就是购物车里所有书籍的名称数组
-					//prs就是购物车里所有书籍的价格数组
-				
-					//更新订单部分
-				
-				}
-			});
-			
 		
-		}
 		
-		//添加进购物车
-		function addToCart(){
-			var login = true;
-			//判断是否已登陆
-			if(!login)
-				{
-				//跳转到登陆界面
-				}
-			else{
-				//从cookie获取邮箱，先假设为13301054@bjtu.edu.cn
-				var useremail = "13301054@bjtu.edu.cn";
-				$.post("logic/addToCart.php",{email:useremail,bookid:id},function(msg)
-        				{
-        			//alert("enter cart");
-        			if(msg == 1)
-        				{
-        				alert("添加成功");
-        				//购物车为空
-        				}
-        			else{
-						alert("此书已存在");
-        			
-        			}
-        		});
-				
-			}
-		}
 		
 	</script>
 </html>
