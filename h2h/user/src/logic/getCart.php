@@ -1,8 +1,8 @@
-<meta chatset = utf-8>
+
 <?php
 require_once dirname(__FILE__)."/../../../db/DBCart.php";
-//$email = $_POST['email'];
-$email = "13301054@bjtu.edu.cn";
+$email = $_POST['email'];
+ //$email = "13301054@bjtu.edu.cn";
 
 $dbcart = new DBCart();
 

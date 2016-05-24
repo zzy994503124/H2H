@@ -53,6 +53,22 @@ class DBCart
     	$this->disconnect();
     	return $result;
     }
+
+    /**
+     * 从购物车删除
+     * @param unknown $email
+     * @param unknown $bookId
+     */
+    public function deleteFromCart($email, $bookname)
+    {
+    	$this->connect();
+    	$sql = "delete from cart where bookid=(select bookId from book where bookName = '".$bookname."');";
+    
+    	//$sql = "delete from cart where userEmail='".$email."'and bookid = '".$bookId."';";
+    	$result = $this->conn->query($sql);
+    	$this->disconnect();
+    	return $result;
+    }
     
     /**
      * 清空购物车

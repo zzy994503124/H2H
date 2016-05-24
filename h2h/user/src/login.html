@@ -5,7 +5,7 @@
 <title>登陆丨H2H</title>
     <link rel="stylesheet" href="css/login_register/login.css">
 	<link rel="stylesheet" href="css/login_register/login_register.min.css">
-
+	
 
 <body>
 
@@ -47,16 +47,18 @@
 <script src="js/login_register/bgChange.js"></script>
 <script src="js/login_register/common.js"></script>
 -->
-<script src="js/vender/jquery.1.10.2.min.js"></script>
-<script src="js/vender/jquery.cookie.js"></script>
+
 <script src="js/login_register/login_register.min.js"></script>
 <!--背景图片自动更换-->
 <script src="js/vender/supersized.3.2.7.min.js"></script>
 <script src="js/vender/supersized-init.js"></script>
+<script src="js/vender/jquery-1.11.0.min.js"></script>
+<script src="js/vender/cookie.js"></script>
 <!--表单验证-->
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
 
+	
 	function check(){
 		//verify用来判断验证码是否正确
 		var verify = false;
@@ -89,9 +91,13 @@
 							if(msg == 1)
 								{
 									var splitEmail = email.substring(0,8);
-									document.loginForm.submit(); 
-									$.cookie("login","true",{expires:1});
-									$.cookie("email",splitEmail+"",{expires:1});
+									 
+									addCookie("login","true","10");
+									addCookie("email",splitEmail,"10");
+									
+									document.loginForm.submit();
+									alert(getCookie("login"));
+									
 								}
 							else
 								{
