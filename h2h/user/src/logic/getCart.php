@@ -1,11 +1,22 @@
+<meta chatset = utf-8>
 <?php
 require_once dirname(__FILE__)."/../../../db/DBCart.php";
-$email = $_POST['useremail'];
-
+//$email = $_POST['email'];
+$email = "13301054@bjtu.edu.cn";
 
 $dbcart = new DBCart();
 
-$clear = $dbcart->getCart($email);
-if($clear > 0)
-	echo 1;
-	else echo 2;
+$books = $dbcart->getCart($email);
+
+foreach($books as $book)
+{
+	$bookNames[] = $book['bookName'];
+	$prices[] = $book['rentPrice'];
+}
+$booknames = json_encode($bookNames);
+$prs = json_encode($prices);
+
+if($booknames == "null")
+	echo "null";
+else
+echo $booknames."|".$prs;

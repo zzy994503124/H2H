@@ -34,9 +34,10 @@ class DBCart
     			and userEmail='".$email."';";
     	
     	$result = $this->conn->query($sql);
-    	
+    	while ($row = mysqli_fetch_array($result))
+    		$rows[] = $row;
+    		return $rows;
     	$this->disconnect();
-    	return $result;
     }
     
     /**

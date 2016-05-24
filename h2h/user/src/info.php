@@ -15,7 +15,6 @@
     	<script type="text/javascript" src="js/vender/jquery.fly.min.js" ></script>
 		<link rel="stylesheet" href="css/vender/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/vender/font-awesome.min.css" />
-        <link rel="stylesheet" href="css/info/info.min.css">
 
 		<link rel="stylesheet" href="css/info/abprule.css" />
 		<link rel="stylesheet" href="css/info/csshide1.css" />
@@ -66,12 +65,12 @@
 		<div id="content" >			
 			<div id="bookPicture" class="clearfix">
 				<!--图片url-->
-				<img id = "img1" src = "img/books/00000001/2.jpg">
+				<img id = "img1" src = "">
 				<img id = "img2" src = "">
 			</div>
 			<div id="detail">
 				<!--书名-->
-				<h1 id="bookName">古镇足迹</h1>
+				<h1 id="bookName"></h1>
 				<!--作者-->
 				<h2 id="author">蒋彪</h2>
 				<!--这里放详细介绍-->
@@ -114,7 +113,7 @@
 					<div class="comments">
 						<div class="leftPart">
                             <i class="icon-user"></i>
-                            <h4 id="userName">张立高</h4>
+                            <h4 id="userName">张利高</h4>
                             <p>评分：<span id="point">3.5</span></p>
                         </div>
                         <div class="rightPart">
@@ -124,7 +123,7 @@
                     <div class="comments">
 						<div class="leftPart">
                             <i class="icon-user"></i>
-                            <h4 id="userName">张立高</h4>
+                            <h4 id="userName">张利高</h4>
                             <p>评分：<span id="point">3.5</span></p>
                         </div>
                         <div class="rightPart">
@@ -149,49 +148,106 @@
 		<!--<a href="index.html" id="back"><p>返 回 首 页</p></a>-->
 		</div>
     </body>
-    <!--<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>-->
-<!--
-    <script src="js/info/info.js"></script>
-	<script src="js/info/main.js"></script>
-	<script src="js/info/megamenu.js"></script>
--->
+
     <script src="js/info/info.min.js"></script>
      <script type="text/javascript">
 	//var bookIds = new Array();
 
+		
 		var url = location.search;
 		var id =  url.split("=")[1];
 		document.getElementById("img1").src = "img//books//" + id+"//2.jpg";
 		document.getElementById("img2").src = "img//books//" + id+"//3.jpg";
 		
 		<?php 
-		require_once dirname(__FILE__)."/../db/DBBooks.php";
+		require_once dirname(__FILE__)."/../../db/DBBooks.php";
 		$dbbooks = new DBBooks();
 		$bookInfos = $dbbooks->getBookIds();
 		$id = $_SERVER["QUERY_STRING"]; 
 		$id = explode("=",$id); 
 		$bookInfos = $dbbooks->getDetails($id[1]);
-		?>;
+		?>
+		
 		var bookName = <?php echo json_encode($bookInfos[0][0])?>;
 		var price = <?php echo json_encode($bookInfos[0][1])?>;
 		var description = <?php echo json_encode($bookInfos[0][2])?>;
 		var stock = <?php echo json_encode($bookInfos[0][3])?>;
 		var publisher = <?php echo json_encode($bookInfos[0][4])?>;
-		
-		window.onload = function() {
-		//document.getElementById("description").innerHTML = description;
+
+		window.onload = function(){
 		document.getElementById("bookName").innerHTML = bookName;
 		document.getElementById("price").innerHTML = price;
 		document.getElementById("stock").innerHTML = stock;
 		document.getElementById("publisher").innerHTML = publisher;
-		
 		}
-	
+		
 		function rent(){
 			var url = location.search;
 			var id =  url.split("=")[1];
 			window.location.href="order.html?bookid="+id+"&price=" + document.getElementById("price").innerHTML;
 		
+		}
+		
+		//获取订单
+		function getCart(){
+			$.post("logic/getCart.php",{email:useremail},function(msg)
+					{
+				//alert("enter cart");
+				if(msg == "null")
+					{
+					///alert("no books");
+					//购物车为空
+					}
+				else{
+					while(msg.indexOf("[")!= -1)
+						msg = msg.replace("[","");
+					while(msg.indexOf("]")!= -1)
+						msg = msg.replace("]","");
+					while(msg.indexOf("\"")!= -1)
+						msg = msg.replace("\"","");
+					var booknames = msg.toString().split("|")[0];
+					var prices = msg.toString().split("|")[1];
+					
+					var bookNames = booknames.toString().split(",");
+					var prs = prices.toString().split(",");
+					
+					//booknames就是购物车里所有书籍的名称数组
+					//prs就是购物车里所有书籍的价格数组
+				
+					//更新订单部分
+				
+				}
+			});
+			
+		
+		}
+		
+		//添加进购物车
+		function addToCart(){
+			var login = true;
+			//判断是否已登陆
+			if(!login)
+				{
+					window.location.href = "login.html";
+				}
+			else{
+				//从cookie获取邮箱，先假设为13301054@bjtu.edu.cn
+				var useremail = "13301054@bjtu.edu.cn";
+				$.post("logic/addToCart.php",{email:useremail,bookid:id},function(msg)
+        				{
+        			//alert("enter cart");
+        			if(msg == 1)
+        				{
+        				alert("添加成功");
+        				//购物车为空
+        				}
+        			else{
+						alert("此书已存在");
+        			
+        			}
+        		});
+				
+			}
 		}
 		
 	</script>
