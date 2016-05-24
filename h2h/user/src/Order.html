@@ -4,7 +4,7 @@
 		<!--<link rel="stylesheet" href="css/order/order.min.css" />-->
 		<link rel="stylesheet" href="css/vender/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/common.css"/>
-		<meta charset="gbk"/>
+		<meta charset="utf-8"/>
 	</head>
 	
 	
@@ -17,12 +17,12 @@
 				<div class="title">
 					<ul class="processName">
 						<li>
-							<span>²é¿´Êé°ü</span>
+							<span>æŸ¥çœ‹ä¹¦åŒ…</span>
 						</li>
-						<li><span>ÅÄÏÂÊé¼®</span></li>
-						<li><span>Ö§¸¶³É¹¦</span></li>
-						<li><span>ÊÕµ½Êé¼®</span></li>
-						<li><span>¹é»¹ÓëÆÀ¼Û</span></li>
+						<li><span>æ‹ä¸‹ä¹¦ç±</span></li>
+						<li><span>æ”¯ä»˜æˆåŠŸ</span></li>
+						<li><span>æ”¶åˆ°ä¹¦ç±</span></li>
+						<li><span>å½’è¿˜ä¸è¯„ä»·</span></li>
 					</ul>
 					<ul class="processNum">
 						<li >
@@ -35,8 +35,8 @@
 					</ul>
 				</div>		
 				<div class="orderInfoDetail">
-						<h2>¶©µ¥ÏêÇé</h2>
-						<a href="info.html" class="return">·µ  »Ø</a>		
+						<h2>è®¢å•è¯¦æƒ…</h2>
+						<a href="info.html" class="return">è¿”  å›</a>		
 				</div>	
 								
 				<table class="table" id="orderTable">
@@ -44,10 +44,10 @@
 				
 				<thead>
 					<tr>
-						<th>ÊéÄ¿</th>
-						<th>×â½ğ(£¤/Ìì)</th>
-						<th>ÌìÊı</th>
-						<th>Ğ¡¼Æ(£¤)</th>
+						<th>ä¹¦ç›®</th>
+						<th>ç§Ÿé‡‘(ï¿¥/å¤©)</th>
+						<th>å¤©æ•°</th>
+						<th>å°è®¡(ï¿¥)</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -58,35 +58,35 @@
 						<td><span id="sumPrice"></span></td>
 					</tr>
 					<tr>
-						<td colspan="3">×Ü¼Æ</td>
+						<td colspan="3">æ€»è®¡</td>
 						<td><span id="totalPrices">2.00</span></td>
 					</tr>
 				</tbody>
 				
 			</table>
-			<label for="comment">ÎÒµÄÁôÑÔ</label><input id="comment" placeholder="Ñ¡Ìî£¬¿ÉÌîĞ´Äú¶Ô±¾¶©µ¥µÄÒªÇó"></input>
+			<label for="comment">æˆ‘çš„ç•™è¨€</label><input id="comment" placeholder="é€‰å¡«ï¼Œå¯å¡«å†™æ‚¨å¯¹æœ¬è®¢å•çš„è¦æ±‚"></input>
 			<br/>
 
 			</div>
 			<form id="cotactInfo">
 				<fieldset class="text-center">
-					<h2>ÁªÏµĞÅÏ¢</h2> 
+					<h2>è”ç³»ä¿¡æ¯</h2> 
                     <div class="nameContainer">
-                        <input class="form-control" placeholder="ĞÕÃû" type="text" id="name"/>
+                        <input class="form-control" placeholder="å§“å" type="text" id="name"/>
                     </div>
 					<div class="phoneNumContainer">
-                        <input class="form-control" placeholder="ÊÖ»úºÅÂë" type="text" id="phoneNumber"/><br />
+                        <input class="form-control" placeholder="æ‰‹æœºå·ç " type="text" id="phoneNumber"/><br />
                     </div>
 					<div class="addressContainer">
-                        <input class="form-control" placeholder="µØÖ·" type="text" id="address"/><br />
+                        <input class="form-control" placeholder="åœ°å€" type="text" id="address"/><br />
                     </div>
 					<div class="confirmCodeContainer">
-                        <input class="form-control" placeholder="ÑéÖ¤Âë" type="text" id="confirmCode"/>
-                        <button type="button" id="sendConfirmCode"  class="btn btn-default" onclick="sendCode()">·¢ËÍÑéÖ¤Âë¸øÊÖ»ú</button>
+                        <input class="form-control" placeholder="éªŒè¯ç " type="text" id="confirmCode"/>
+                        <button type="button" id="sendConfirmCode"  class="btn btn-default" onclick="sendCode()">å‘é€éªŒè¯ç ç»™æ‰‹æœº</button>
                     </div>
                     <p class="hint">aaaaa</p>
-					<button type="button" class="orderBtn" data-toggle="modal" data-target="" id="submit">Ìá  ½»</button>					
-					<button  type="button" class="orderBtn" id="cancel">È¡ Ïû</button>
+					<button type="button" class="orderBtn" data-toggle="modal" data-target="" id="submit">æ  äº¤</button>					
+					<button  type="button" class="orderBtn" id="cancel">å– æ¶ˆ</button>
 				</fieldset>
 			</form>
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -94,10 +94,10 @@
 				    <div class="modal-content">
 				      <div class="modal-header">
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">½»Ò×³É¹¦</h4>
+				        <h4 class="modal-title" id="myModalLabel">äº¤æ˜“æˆåŠŸ</h4>
 				      </div>
 				      <div class="modal-body">
-				        ¶©µ¥ºÅ£º123123123
+				        è®¢å•å·ï¼š123123123
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="gotoHome()">OK</button>		        
@@ -116,25 +116,25 @@
 
     window.onload = function(){
     	var login = false;
-    	//ÅĞ¶ÏÊÇ·ñÒÑµÇÂ½£¬
+    	//åˆ¤æ–­æ˜¯å¦å·²ç™»é™†ï¼Œ
     	if(!login)
-			//Ìø×ªµ½µÇÂ½½çÃæ
+			//è·³è½¬åˆ°ç™»é™†ç•Œé¢
     }
     	var code;
     
     	/**
-    	¸ù¾İcodeÀ´ÅĞ¶ÏÑéÖ¤ÂëÊÇ·ñÕıÈ·
+    	æ ¹æ®codeæ¥åˆ¤æ–­éªŒè¯ç æ˜¯å¦æ­£ç¡®
     	*/
         function sendCode(){
     		
     		//check the format of phone number
     		
-    		//Òì²½·¢ËÍÑéÖ¤Âë
+    		//å¼‚æ­¥å‘é€éªŒè¯ç 
         	var mobilenumber = document.getElementById("phoneNumber").value;
         	var xmlHttp;
         	if(mobilenumber.length == 0)
         		{
-        		alert("ÇëÊäÈëÊÖ»úºÅ");
+        		alert("è¯·è¾“å…¥æ‰‹æœºå·");
         		}
         	if(window.XMLHttpRequest)
         		{
@@ -175,7 +175,7 @@
             }else{
                 $('#number').css("border","1px solid darkturquoise");
             }
-            //j¼ì²éÊÇ·ñÎª¿Õ
+            //jæ£€æŸ¥æ˜¯å¦ä¸ºç©º
             if(isNull(name)){
                 $('.nameContainer').addClass("has-error");
                 $('#name').css("border","1px solid crimson");
@@ -199,7 +199,7 @@
                 success =false;
             }else if(!/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/.test(phoneNum)){
                 $('.phoneNumContainer').addClass("has-error");
-                $('#cotactInfo .hint').text("* ÊÖ»úºÅÂë¸ñÊ½²»¶Ô£¡");
+                $('#cotactInfo .hint').text("* æ‰‹æœºå·ç æ ¼å¼ä¸å¯¹ï¼");
                 $('#cotactInfo .hint').css("visibility","visible");
                 success = false;
             }else{
@@ -210,7 +210,7 @@
             }
             if(codeString != confirmCode)
         	{
-            	$('#cotactInfo .hint').text("* ÑéÖ¤Âë´íÎó!");
+            	$('#cotactInfo .hint').text("* éªŒè¯ç é”™è¯¯!");
                 $('#cotactInfo .hint').css("visibility","visible");
                  $('.confirmCodeContainer').addClass("has-error");
                  
@@ -227,16 +227,16 @@
         
         
         window.onload= function(){
-        	//ÅĞ¶ÏÊÇ·ñµÇÂ½
+        	//åˆ¤æ–­æ˜¯å¦ç™»é™†
         	
         	var login = true;
-        	//Èç¹ûÃ»ÓĞµÇÂ½£¬Ìø×ªµ½Ö÷Ò³
+        	//å¦‚æœæ²¡æœ‰ç™»é™†ï¼Œè·³è½¬åˆ°ä¸»é¡µ
         	if(!login)
         		{
         		window.location.href = "login.html";
         		}
         	else{
-        		//emailÓ¦¸ÃÀ´×ÔÓÚcookie£¬ÏÖÔÚÊ¹ÓÃ13301054@bjtu.edu.cn´úÌæ
+        		//emailåº”è¯¥æ¥è‡ªäºcookieï¼Œç°åœ¨ä½¿ç”¨13301054@bjtu.edu.cnä»£æ›¿
         		var useremail = "13301054@bjtu.edu.cn";
         	
         		$.post("logic/getCart.php",{email:useremail},function(msg)
@@ -245,7 +245,7 @@
         			if(msg == "null")
         				{
         				///alert("no books");
-        				//¹ºÎï³µÎª¿Õ
+        				//è´­ç‰©è½¦ä¸ºç©º
         				}
         			else{
 						while(msg.indexOf("[")!= -1)
@@ -260,11 +260,11 @@
         				var bookNames = booknames.toString().split(",");
         				var prs = prices.toString().split(",");
         				
-        				//booknames¾ÍÊÇ¹ºÎï³µÀïËùÓĞÊé¼®µÄÃû³ÆÊı×é
-						//prs¾ÍÊÇ¹ºÎï³µÀïËùÓĞÊé¼®µÄ¼Û¸ñÊı×é
+        				//booknameså°±æ˜¯è´­ç‰©è½¦é‡Œæ‰€æœ‰ä¹¦ç±çš„åç§°æ•°ç»„
+						//prså°±æ˜¯è´­ç‰©è½¦é‡Œæ‰€æœ‰ä¹¦ç±çš„ä»·æ ¼æ•°ç»„
 
         			
-						//¸üĞÂ¶©µ¥ÏêÇé²¿·Ö
+						//æ›´æ–°è®¢å•è¯¦æƒ…éƒ¨åˆ†
 						
         			document.getElementById("phoneNumber").value = bookNames[2];
         			
@@ -274,7 +274,7 @@
         }
         
         
-        //Çå¿Õ¹ºÎï³µ£¬ÔÚµã»÷Ìá½»Íê³ÉÖ®ºóµ÷ÓÃ
+        //æ¸…ç©ºè´­ç‰©è½¦ï¼Œåœ¨ç‚¹å‡»æäº¤å®Œæˆä¹‹åè°ƒç”¨
         function clearCart(){
         	var useremail = "13301054@bjtu.edu.cn";
         	$.post("logic/clearCart.php",{email:useremail},function(msg)
@@ -283,7 +283,7 @@
     			if(msg == 1)
     				{
     				///alert("no books");
-    				//¹ºÎï³µÎª¿Õ
+    				//è´­ç‰©è½¦ä¸ºç©º
     				}
     			else{
 					
