@@ -82,11 +82,22 @@ function check(){
 				
 				$.post("logic/checkRegister.php",{useremail:email,username:name,userpassword:password},function(msg)
 						{
-					
 							if(msg == 1)
 								{
 								
-								document.registerForm.submit(); 
+								$.post("security/sendEmail.php",{useremail:email},function(msg)
+										{
+									alert(msg);
+									if(msg == 1)
+										{
+										var link="registerConfirm.html?userEmail="+email;
+										window.location.href=link;
+										}
+									else{
+										alert("邮件发送失败，请重试！");
+									}
+										})
+								
 								}
 							else if(msg == 2)
 								{

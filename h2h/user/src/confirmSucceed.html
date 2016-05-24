@@ -35,9 +35,14 @@
 </body>
 <script src="js/vender/jquery-1.11.0.min.js"></script>
 <script>
+window.onload= function(){
+	var url = location.search;
+	var email =  url.split("=")[1];
+	document.getElementById("registerEmail").innerHTML=email;
+}
     $(function(){
         setTimeout(function(){
-            window.location = "http://www.baidu.com/";
+            window.location = "http://www.h2h.com/";
         },5000);
     });
 </script>

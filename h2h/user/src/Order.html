@@ -111,7 +111,7 @@
  	<script src="js/vender/jquery-1.11.0.min.js"></script>
 	<script src="js/vender/bootstrap.min.js"></script>
     <script src="js/vender/jquery.js"></script>
-    <script src="js/order/order.min.js"></script>
+    <script src="js/order/order.js"></script>
     <script type="text/javascript">
 
     	var code;
@@ -147,7 +147,77 @@
         	xmlHttp.open("GET","security/checkSMSCode.php?m="+mobilenumber+"&code="+code,true);
         	xmlHttp.send();
         	}
-        
+        $('#submit').click(function(){
+        	
+            var rentDay = $('#number').val();
+            var startDate = $('#startDate').val();
+            var endDate = $('#endDate').val();
+            var name = $('#name').val();
+            var address = $('#address').val();
+            var phoneNum = $('#phoneNumber').val();
+            var confirmCode = $('#confirmCode').val();
+            
+            var success = true;
+            var codeString = code.toString();
+            
+            
+            
+            
+            if(parseInt(rentDay)<=0){
+                $('#number').css("border","1px solid crimson");
+                success = false;
+            }else{
+                $('#number').css("border","1px solid darkturquoise");
+            }
+            //j检查是否为空
+            if(isNull(name)){
+                $('.nameContainer').addClass("has-error");
+                $('#name').css("border","1px solid crimson");
+                success = false;
+            }
+            else{
+                $('.nameContainer').addClass("has-success").removeClass("has-error");
+                $('#name').css("border","1px solid darkturquoise");
+            }
+            if(isNull(address)){
+                $('.addressContainer').addClass("has-error");
+                $('#address').css("border","1px solid crimson");
+                success = false;
+            }else{
+                $('.addressContainer').addClass("has-success").removeClass("has-error");
+                $('#address').css("border","1px solid darkturquoise");
+            }
+            if(isNull(phoneNum)){
+                $('.phoneNumContainer').addClass("has-error");
+                $('#phoneNumber').css("border","1px solid crimson");
+                success =false;
+            }else if(!/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/.test(phoneNum)){
+                $('.phoneNumContainer').addClass("has-error");
+                $('#cotactInfo .hint').text("* 手机号码格式不对！");
+                $('#cotactInfo .hint').css("visibility","visible");
+                success = false;
+            }else{
+                $('.phoneNumContainer').addClass("has-success").removeClass("has-error");
+                $('#cotactInfo .hint').text("");
+                $('#cotactInfo .hint').css("visibility","hideen");
+                $('#phoneNumber').css("border","1px solid darkturquoise");
+            }
+            if(codeString != confirmCode)
+        	{
+            	$('#cotactInfo .hint').text("* 验证码错误!");
+                $('#cotactInfo .hint').css("visibility","visible");
+                 $('.confirmCodeContainer').addClass("has-error");
+                 
+             	 success = false;
+        	}else{
+        		$('.confirmCodeContainer').addClass("has-success").removeClass("has-error");
+                $('#cotactInfo .hint').text("");
+                $('#cotactInfo .hint').css("visibility","hideen");
+        	}
+            if(success){
+                $('#submit').attr("data-target","#myModal");
+            }
+        });
 	</script>
 	
 </html>

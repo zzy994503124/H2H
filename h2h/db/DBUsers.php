@@ -31,7 +31,7 @@ class DBUsers
  */
     public function insertUser($email,$username,$userpsd){
     	$this->connect();
-    	$sql = "insert into usr(usereEmail, userPsd, username) values ($email,$userpsd,$username);";
+    	$sql = "insert into usr(userEmail, userPsd, username) values ('".$email."','".$userpsd."','".$username."');";
     	$result = $this->conn->query($sql);
 		return $result;
 		$this->disconnect();
