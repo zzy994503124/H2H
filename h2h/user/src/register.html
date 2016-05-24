@@ -72,7 +72,6 @@ function check(){
 			if(msg=="1")
 			{
 				varify = true;
-				alert("verify success");
 				
 				// check register info
 				var email = document.getElementById("SignUpEmail").value;
@@ -87,7 +86,6 @@ function check(){
 								
 								$.post("security/sendEmail.php",{useremail:email},function(msg)
 										{
-									alert(msg);
 									if(msg == 1)
 										{
 										var link="registerConfirm.html?userEmail="+email;
