@@ -23,45 +23,49 @@
 		
     </head>
     <body>
-    	<div class="main">
-		<header>
-			<a href="/"><img src="img/logo.jpg"></a>
-		</header>
-		<nav class="menu-container">
-			<div class="menu">
-				<ul>
-                    <!--书包-->
-					<li id="cd-cart-trigger">
-                        <a href="#" id="cart cd-img-replace">
-                        	<i class="icon-shopping-cart" id="end">
-                        	</i>我的书包
-                        </a>
-                        <!--
-                        	作者：994503124@qq.com
-                        	时间：2016-04-27
-                        	描述：购物车内数量
-                        -->
-                        <span id="cartNum" class="noBook">0</span>
-                    </li>
-                    <!--消息-->
-					<li>
-                        <a href="" id="message"><i class="icon-bell-alt"></i>消  息</a>
-					</li>
-					<li>
-                        <!--用户名-->
-                        <a href="login.html" id="userName"><i class="icon-user"></i>请登录</a>
+		<div class="banner">
+				<header>
+					<a href="/"><img src="img/logo.png"></a>
+				</header>
+				<nav class="menu-container">
+					<div class="menu">
 						<ul>
-							<li><a href="#">个人信息</a></li>
-							<li><a href="#">历史订单</a></li>
+							<!--书包-->
+							<li id="cd-cart-trigger">
+								<a href="#" id="cart cd-img-replace">
+									<i class="icon-shopping-cart" id="end">
+									</i>我的书包
+								</a>
+								<!--
+									作者：994503124@qq.com
+									时间：2016-04-27
+									描述：购物车内数量
+								-->
+								<span id="cartNum" class="noBook">0</span>
+							</li>
+							<!--消息-->
+							<li>
+								<a href="" id="message"><i class="icon-bell-alt"></i>消  息</a>
+							</li>
+							<li>
+								<!--用户名-->
+								<a href="login.html" id="userName"><i class="icon-user"></i>请登录</a>
+								<ul>
+									<li><a href="#">个人信息</a></li>
+									<li><a href="#">历史订单</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="/" id="homePage"><i class="icon-home"></i>主  页</a>
+							</li>
 						</ul>
-					</li>
-					<li>
-                        <a href="/" id="homePage"><i class="icon-home"></i>主  页</a>
-					</li>
-				</ul>
+					</div>
+					<div id="msg">已成功加入购物车！</div>
+				</nav>
 			</div>
-			<div id="msg">已成功加入购物车！</div>
-		</nav>
+    	<div class="main">
+			
+		
 		<div id="content" >			
 			<div id="bookPicture" class="clearfix">
 				<!--图片url-->
@@ -108,7 +112,7 @@
 					<p>加 入 书 包</p>
 				</a>
 				<!--评论-->
-				<div class="commentsContainer">
+				<!--<div class="commentsContainer">
 					<h3>评论</h3>
 					<div class="comments">
 						<div class="leftPart">
@@ -130,6 +134,30 @@
                             <p class="commentInfo" id="commentInfo">这书很不错！</p>
                         </div>
 					</div>
+				</div>-->
+				<div class="commentsContainer">
+					<h3>短评</h3>
+					<hr>
+					<article class="commentsMain">
+						<span class="name">苏木</span>
+						<span class="star">★★★★★</span>
+						<span class="date">2016-04-30</span>
+						<p class="comments">非常实用，推荐软件学院大二学生阅读</p>
+					</article>
+					<hr>
+					<article class="commentsMain">
+						<span class="name">西门</span>
+						<span class="star">★★★</span>
+						<span class="date">2016-04-30</span>
+						<p class="comments">书很好，没有涂改的痕迹</p>
+					</article>
+					<hr>
+					<article class="commentsMain">
+						<span class="name">张丽高</span>
+						<span class="star">★★★★</span>
+						<span class="date">2016-04-30</span>
+						<p class="comments">非常好，讲解细致，简单易懂</p>
+					</article>
 				</div>
 			</div>
 		</div>
@@ -147,6 +175,29 @@
 		</div> <!-- cd-cart -->
 		<!--<a href="index.html" id="back"><p>返 回 首 页</p></a>-->
 		</div>
+		<footer>
+		<ul>
+			<li>
+				<a>关于拉手</a>
+			</li>
+			<span></span>	
+			<li>
+				<a>在拉手工作</a>
+			</li>
+			<span></span>	
+			<li>
+				<a>联系我们</a>
+			</li>	
+			<span></span>
+			<li>
+				<a>图书馆合作</a>
+			</li>	
+			<span></span>
+			<li>
+				<a>拉手广告</a>
+			</li>	
+		</ul>
+	</footer>
     </body>
 
     <script src="js/info/info.js"></script>

@@ -1,3 +1,13 @@
+a:hover{
+    cursor: pointer;
+}
+.banner{
+    height: 15%;
+	width: 100%;
+	margin: 0 0 40px;
+	padding: 0;
+	background-color: rgb(249, 249, 249);
+}
 #content{
     width: 100%;
     height: auto;
@@ -93,7 +103,8 @@
 .commentsContainer{
     width: 90%;
     margin: 20px auto;
-    border: 2px solid #000;
+    border: 0;
+    text-align: left;
 }
 .commentsContainer:after{
     content: "";
@@ -102,40 +113,26 @@
 }
 .commentsContainer h3{
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     font-family: "MFYueHei_Noncommercial-Regular";
     margin-bottom: 20px;
 
 }
 .commentsContainer .comments{
     margin: 10px auto;
-    padding: 10px;
+    padding: 0;
 }
-.commentsContainer .comments:after{
-    content: "";
-    clear: both;
-    display: block;
-}
-.commentsContainer .comments .leftPart{
-    width: 30%;
-    min-height: 85px;
+#detail .commentsContainer article.commentsMain {
+    width: 100%;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 14px;
     font-family: "MFYueHei_Noncommercial-Regular";
-    float: left;
-    text-align: center;
 }
-.commentsContainer .comments .leftPart h4{
-    font-size: 15px;
-}
-.commentsContainer .comments .rightPart{
-    width: 70%;
-    min-height: 85px;
-    font-family: "MFYueHei_Noncommercial-Regular";
-    float: left;
-    border: 2px solid #000;
-    border-radius: 5px;
-}
-.commentsContainer .comments .rightPart p{
-    margin: 5px;
+#detail .commentsContainer article.commentsMain span{
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
 }
 #bookPicture img{
     margin: 10px auto;
@@ -162,7 +159,32 @@ span.noBook{
 }
 #msg{position:fixed; top:300px; right:35px; z-index:10000; width:1px; height:52px; line-height:52px; font-size:20px; text-align:center; color:#fff; background:#360; display:none}
 .main{
-    width: 70%;
-    height: auto;
+    width: 80%;
+    height: 80%;
     margin: 0 auto;
+}
+footer{
+	width: 100%;
+	padding: 20px 0;
+	margin: 40px auto 0;
+	background-color: rgb(249, 249, 249);
+	color: rgb(0, 0, 0);
+	font-family: "微软雅黑";
+	font-weight: 300;
+	text-align: center;
+}
+footer ul{
+	display: block;
+	width: 100%;
+}
+footer ul li{
+	display: inline-block;
+	width: auto;
+	margin: 0 10px;
+}
+footer ul span{
+	display: inline-block;
+	width: 2px;
+	height: 10px;
+	background-color: #000;
 }
