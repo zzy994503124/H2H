@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="css/index/magic.min.css"><link rel="stylesheet" href="css/index/home.css"><link rel="stylesheet" href="css/index/carrousel.css"><link rel="stylesheet" href="css/common.css"><script type="text/javascript" src="logic/getBooks.php"></script><title>首页</title></head><body><div id="main"><section id="title"><img id="logo" src="img/Logo.png"><ul><li><a href="login.html">登录</a></li><span></span><li><a href="register.html">注册</a></li></ul></section><div id="content"><div class="recommend"><h1>推荐阅读</h1><span></span></div><section class="bookItems"><div class="container"><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock1"></span>本</span><div class="row">租金： <span id="price1"></span> 元/天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img1" src="img\books\00000001\2.jpg"></div><article><h1 id="bookname1">微积分</h1><h2 id="publisher1">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000001" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock2"></span>本</span><div class="row">租金： <span id="price2"></span> 元/天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img2" src=""></div><article><h1 id="bookname2">微积分</h1><h2 id="publisher2">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000002" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余：<span id="stock3"></span>本</span><div class="row">租金： <span id="price3"></span>元 /天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img3" src=""></div><article><h1 id="bookname3">微积分</h1><h2 id="publisher3">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000003" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock4"></span>本</span><div class="row">租金： <span id="price4"></span> 元/天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img4" src=""></div><article><h1 id="bookname4">微积分</h1><h2 id="publisher4">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000004" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock5"></span>本</span><div class="row">租金： <span id="price5"></span>元 /天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img5" src="" alt=""></div><article><h1 id="bookname5">微积分</h1><h2 id="publisher5">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000005" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock6"></span>本</span><div class="row">租金： <span id="price6"></span>元 /天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img6" src="" alt=""></div><article><h1 id="bookname6">微积分</h1><h2 id="publisher6">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000006" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock7"></span>本</span><div class="row">租金： <span id="price7"></span>元 /天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img7" src="" alt=""></div><article><h1 id="bookname7">微积分</h1><h2 id="publisher7">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000007" target="_blank"></a></div><div class="box"><div class="box-content"><div class="box-wrapper"><span class="name">剩余<span id="stock8"></span>本</span><div class="row">租金：<span id="price8"></span>元/天</div></div></div><div class="box-overlay magictime inner" data-hover="rotateLeft" data-return=""><div class="load-container load6"><div class="loader">Loading...</div></div><img id="img8" src="" alt=""></div><article><h1 id="bookname8">微积分</h1><h2 id="publisher8">刘英东<span> 编著</span></h2></article><a class="link" href="info.php?bookid=00000008" target="_blank"></a></div></div></section></div></div><footer><ul><li><a>关于拉手</a></li><span></span><li><a>在拉手工作</a></li><span></span><li><a>联系我们</a></li><span></span><li><a>图书馆合作</a></li><span></span><li><a>拉手广告</a></li></ul></footer><script src="js/vender/jquery.1.10.2.min.js"></script><script src="js/vender/jquery.cookie.js"></script><script src="js/index/index.min.js"></script><script src="js/vender/cookie.js"></script></body><script type="text/javascript">//var bookIds = new Array();
+	window.onload = function() {
+		
+		//获取登录cookie
+		if(getCookie("login") == null){
+			
+		}
+		if(getCookie("login") == "true"){
+			$('#title ul li:nth-child(1) a').text(getCookie("email"));
+			$('#title ul li:nth-child(1) a').attr("href","#");
+			$('#title ul li:nth-child(3) a').text("退出");
+			$('#title ul li:nth-child(3) a').click(function(){
+				delCookie("login");
+				dleCookie("email");
+				 
+			});
+			$('#title ul li:nth-child(3) a').attr("href","index.html");
+			
+		}
+		
+		bookIds = bookIds.toString().split(",");
+		bookNames = booknames.toString().split(",");
+		publishers = publishers.toString().split(",");
+		bookpeices = bookPrices.toString().split(",");
+		bookstocks = bookStocks.toString().split(",");
+		bookauthors = authors.toString().split(",");
+		
+		
+		for(var i = 0; i < 8; i++)
+			{
+			var j = i+1;
+			document.getElementById("price"+j).innerHTML = bookpeices[i];
+			document.getElementById("stock"+j).innerHTML = bookstocks[i];
+			document.getElementById("publisher"+j).innerHTML = publishers[i];
+			document.getElementById("bookname"+j).innerHTML = bookNames[i];
+			document.getElementById("img"+j).src="img//books//" + bookIds[i]+"//2.jpg";
+			}
+			
+	}</script></html>

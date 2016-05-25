@@ -1,0 +1,107 @@
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+    color: #1A1A1A;
+}
+div.content{
+    width: 80%;
+    height: 100%;
+    margin: 12% auto;
+    padding: 20px 10px;
+    position: relative;
+}
+div.main{
+    width: 100%;
+    height:auto;
+    text-align: center;
+}
+div.imgTip{
+    width: 80%;
+    height: 96px;
+    text-align: center;
+}
+div.imgTip img{
+    width: 66px;
+    height: 96px;
+    margin: 0 5% 0 auto;
+}
+div.imgTip h1{
+    display: inline-block;
+    line-height: 96px;
+    margin: 0 auto;
+    position: absolute;
+    color: #69666a;
+    font-family: "YouYuan", sans-serif;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+div.imgTip h1 strong{
+    color: #69666a;
+    font-family: "YouYuan", sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+div.main h2{
+    color: #69666a;
+    font-family: "YouYuan", sans-serif;
+    font-size: 1.25em;
+    font-weight: 500;
+    margin: 3%;
+}
+#confirmBtn{
+    width: 120px;
+    height: 50px;
+    background-color: #0e90d2;
+    display: inline-block;
+    line-height: 50px;
+    color: white;
+    font-size: 1em;
+    font-family: "YouYuan", sans-serif;
+    margin: 0 5%;
+}
+#confirmBtn:hover{
+    background-color: #1379d5;
+}
+#notRecive{
+    display: inline-block;
+    color: #0e90d2;
+    font-size: 1em;
+    font-family: "YouYuan", sans-serif;
+    line-height: 50px;
+    font-weight: 600;
+}
+#notRecive:hover{
+    color: #1379d5;
+}
+div.textTip{
+    text-align: center;
+    margin-top: 4%;
+}
+div.textTip h1{
+    font-size: 1.3em;
+    font-family: "miniYouXian",serif;
+    color: #5e6565;
+}
+div.textTip h2{
+    font-size: 1em;
+    font-family: "miniYouXian",serif;
+    color: #5e6565;
+    font-weight: 600;
+    width:37%;
+    margin: 30px auto;
+}
+a#handSkip{
+    display: inline-block;
+    color: #0e90d2;
+    font-size: 1em;
+    font-family: "YouYuan", sans-serif;
+    line-height: 50px;
+    font-weight: 600;
+}
+a#returnHome{
+    display: inline-block;
+    color: #0e90d2;
+    font-size: 1em;
+    font-family: "YouYuan", sans-serif;
+    line-height: 50px;
+    font-weight: 600;
+}

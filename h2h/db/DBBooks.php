@@ -13,9 +13,7 @@ class DBBooks
     private $conn = null;
     public function connect()
     {
-     /*   $this->conn = new mysqli(DBParameters::$server, DBParameters::$username,
-            DBParameters::$psd, DBParameters::$dbname);*/
-    	//mysqli_query("set names utf8");
+
         $this->conn = new mysqli("localhost","root",
         		"", "h2h");
         $this->conn->query("SET NAMES utf8");
@@ -94,8 +92,6 @@ class DBBooks
             return $rows;
             //return implode("###",$rows);
             $this->disconnect();
-
-
     }
 
 

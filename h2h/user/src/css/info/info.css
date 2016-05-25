@@ -1,0 +1,190 @@
+a:hover{
+    cursor: pointer;
+}
+.banner{
+    height: 15%;
+	width: 100%;
+	margin: 0 0 40px;
+	padding: 0;
+	background-color: rgb(249, 249, 249);
+}
+#content{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 80px;
+}
+#content::after{
+    content: ".";
+    clear: both;
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+}
+#detail{
+    width: 32%;
+    height: auto;
+    position: relative;
+    margin: 40px 10% 40px 10%;
+    float: left;
+}
+#bookPicture{
+    width: 32%;
+    height: auto;
+    position: relative;
+    margin: 40px 0 40px 10%;
+    float: left;
+}
+#bookPicture img{
+    width: 80%;
+    height: 80%;
+}
+#detail h1{
+    font-size: 2.5em;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "miniYinBiKaiShu";
+}
+#detail h2{
+    font-size: 1.8em;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+    font-weight: 600;
+    font-family: "miniYinBiXingShu";
+}
+#detail article{
+    width: 90%;
+    margin: 40px auto;
+    height: auto;
+    text-align: left;
+    font-size: 1.4em;
+}
+#detail article ul{
+    width: auto;
+    height: auto;
+    list-style: none;
+    padding-right: 40px;
+    position: relative;
+}
+#detail article ul li{
+    width: auto;
+    height: auto;
+    position: relative;
+}
+#detail article ul li h3{
+    font-family: "MFYueHei_Noncommercial-Regular";
+    font-size: 0.9em;
+    font-weight: 600;
+    display: inline-block;
+}
+#detail article ul li>span{
+    font-family: "MFYueHei_Noncommercial-Regular";
+    font-size: 0.7em;
+    font-weight: 300;
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    right: 0;
+    margin: 20px 0;
+}
+#detail article ul li p{
+    width: calc(100% - 40px);
+    height: auto;
+    font-family: "MFYueHei_Noncommercial-Regular";
+    font-size: 15px;
+    font-weight: 300;
+    position: absolute;
+    left: 40px;
+}
+.commentsContainer{
+    width: 90%;
+    margin: 20px auto;
+    border: 0;
+    text-align: left;
+}
+.commentsContainer:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.commentsContainer h3{
+    font-size: 20px;
+    text-align: left;
+    font-family: "MFYueHei_Noncommercial-Regular";
+    margin-bottom: 20px;
+
+}
+.commentsContainer .comments{
+    margin: 10px auto;
+    padding: 0;
+}
+#detail .commentsContainer article.commentsMain {
+    width: 100%;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 14px;
+    font-family: "MFYueHei_Noncommercial-Regular";
+}
+#detail .commentsContainer article.commentsMain span{
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
+}
+#bookPicture img{
+    margin: 10px auto;
+}
+#addCar{
+    width:40%;
+}
+.u-flyer{display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999;}
+#cartNum{
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    line-height: 18px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+}
+span.noBook{
+    visibility: hidden;
+}
+#msg{position:fixed; top:300px; right:35px; z-index:10000; width:1px; height:52px; line-height:52px; font-size:20px; text-align:center; color:#fff; background:#360; display:none}
+.main{
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+footer{
+	width: 100%;
+	padding: 20px 0;
+	margin: 40px auto 0;
+	background-color: rgb(249, 249, 249);
+	color: rgb(0, 0, 0);
+	font-family: "微软雅黑";
+	font-weight: 300;
+	text-align: center;
+}
+footer ul{
+	display: block;
+	width: 100%;
+}
+footer ul li{
+	display: inline-block;
+	width: auto;
+	margin: 0 10px;
+}
+footer ul span{
+	display: inline-block;
+	width: 2px;
+	height: 10px;
+	background-color: #000;
+}

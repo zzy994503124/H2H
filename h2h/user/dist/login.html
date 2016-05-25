@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="zh-CN"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta charset="utf-8"><title>登陆丨H2H</title><link rel="stylesheet" href="css/login_register/login.css"><link rel="stylesheet" href="css/login_register/login_register.min.css"><body><div class="login-container"><div><a href="/"><img id="logo" src="img/Logo.png"></a></div><div class="connect"><p>Link the world. Share to world.</p></div><form action="index.html" method="post" id="loginForm" name="loginForm"><div><input id="LoginEmail" type="email" name="email" class="email" placeholder="邮箱地址" oncontextmenu="return false" onpaste="return false"></div><div><input id="LoginPassword" type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false"></div><div><input id="identifyingCode" type="identifyingCode" name="identifyingCode" class="identifyingCode" placeholder="验证码" oncontextmenu="return false" onpaste="return false"></div><div><img id="identifyingCodeImg" src="security/verifyCode.php" onclick="document.getElementById('identifyingCodeImg').src='security/verifyCode.php'"> <span id="tips">点击图片更换验证码</span></div><button id="loginsubmit" type="button" onclick="check()">登 录</button></form><a href="register.html"><button id="ToSignUp" type="button" class="register-tis">还没有账号？</button></a></div></body><script src="js/login_register/login_register.min.js"></script><script src="js/vender/supersized.3.2.7.min.js"></script><script src="js/vender/supersized-init.js"></script><script src="js/vender/jquery-1.11.0.min.js"></script><script src="js/vender/cookie.js"></script><script src="js/vender/jquery.validate.min.js?var1.14.0"></script><script>function check(){
+		//verify用来判断验证码是否正确
+		var verify = false;
+		var loginsucess = true;
+		var format=false;    //表单格式
+		
+		
+		//判断格式
+		format = true;
+		
+		var verifyCode = document.getElementById("identifyingCode").value;
+	
+		//判断格式
+		if(format)
+			{
+			
+			//判断验证码
+		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
+			if(msg=="1")
+			{
+				varify = true;
+
+				var email = document.getElementById("LoginEmail").value;
+				var password = document.getElementById("LoginPassword").value;
+				
+				
+				$.post("logic/checkLogin.php",{useremail:email,userpassword:password},function(msg)
+						{					
+					
+							if(msg == 1)
+								{
+									var splitEmail = email.substring(0,8);
+									 
+									addCookie("login","true","10");
+									addCookie("email",splitEmail,"10");
+									
+									document.loginForm.submit();
+									
+									
+								}
+							else
+								{
+								
+								alert("邮箱或密码错误");
+								document.getElementById("identifyingCodeImg").src='security/verifyCode.php';
+								}
+						});
+				
+			}
+			else{
+				alert("verify wrong");
+				document.getElementById('identifyingCodeImg').src='security/verifyCode.php';
+			}
+		});
+		}	
+		return;
+	}</script></html>

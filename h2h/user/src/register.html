@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta charset="utf-8">
+<title>注册丨Sharelink</title>
+    <link rel="stylesheet" href="css/login_register/login.css">
+	<link rel="stylesheet" href="css/login_register/login_register.min.css">
+<body>
+
+<div class="register-container">
+	<div>
+		<a href="/"><img id="logo" src="img/Logo.png" /></a>
+	</div>
+	<div class="connect">
+		<p>Link the world. Share to world.</p>
+	</div>
+
+	<form action="registerConfirm.html" method="post" id="registerForm" name = "registerForm">
+		<div>
+			<input id="SignUpEmail" type="email" name="email" class="email" placeholder="邮箱地址" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input id="username" type="username" name="username" class="username" placeholder="用户名" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input id="SignUpPW" type="password" name="password" class="password" placeholder="输入密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input id="ConfirmSignUpPW" type="password" name="confirm_password" class="confirm_password" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<input id="identifyingCode" type="identifyingCode" name="identifyingCode" class="identifyingCode" placeholder="验证码" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<img id="identifyingCodeImg" src="security/verifyCode.php" onclick="document.getElementById('identifyingCodeImg').src='security/verifyCode.php' "/>
+			
+			<span id="tips">点击图片更换验证码</span>
+		</div>
+		<button id="registersubmit" type="button" onclick="check()">注 册</button>
+	</form>
+	<a href="login.html">
+		<button id="ToLogin" type="button" class="register-tis">已经有账号？</button>
+	</a>
+
+</div>
+
+</body>
+<!--
+<script src="js/login_register/bgChange.js"></script>
+<script src="js/login_register/common.js"></script>
+-->
+    <script src="js/login_register/login_register.min.js"></script>
+<!--背景图片自动更换-->
+<script src="js/vender/supersized.3.2.7.min.js"></script>
+<script src="js/vender/supersized-init.js"></script>
+<!--表单验证-->
+<script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
+<script>
+function check(){
+	//verify用来判断验证码是否正确
+	var verify = false;
+	var registersucess = true;
+	var format = false;
+	
+	//验证格式
+		format=true;
+	
+	if(format)
+		{
+		var verifyCode = document.getElementById("identifyingCode").value;
+		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
+			if(msg=="1")
+			{
+				varify = true;
+				
+				// check register info
+				var email = document.getElementById("SignUpEmail").value;
+				var name = document.getElementById("username").value;
+				var password = document.getElementById("SignUpPW").value;
+
+				
+				$.post("logic/checkRegister.php",{useremail:email,username:name,userpassword:password},function(msg)
+						{
+							if(msg == 1)
+								{
+								
+								$.post("security/sendEmail.php",{useremail:email},function(msg)
+										{
+									if(msg == 1)
+										{
+										var link="registerConfirm.html?userEmail="+email;
+										window.location.href=link;
+										}
+									else{
+										alert("邮件发送失败，请重试！");
+									}
+										});
+								
+								}
+							else if(msg == 2)
+								{
+								alert("邮箱已存在");
+								}
+						});
+				
+			}
+			else{
+				alert("verify wrong");
+				document.getElementById("identifyingCodeImg").src='security/verifyCode.php';
+			}
+		});
+
+		}
+
+}
+</script>
+</html>
