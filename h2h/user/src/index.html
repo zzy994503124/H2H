@@ -299,6 +299,10 @@
 			$('#title ul li:nth-child(1) a').text(getCookie("email"));
 			$('#title ul li:nth-child(1) a').attr("href","#");
 			$('#title ul li:nth-child(3) a').text("退出");
+			$('#title ul li:nth-child(3) a').click(function(){
+				delCookie("login");
+				dleCookie("email");
+			});
 			$('#title ul li:nth-child(3) a').attr("href","#");
 			
 		}
