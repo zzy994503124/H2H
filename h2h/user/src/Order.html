@@ -51,12 +51,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Data Structure</td>
-						<td><span class="price">2.00</span></td>
-						<td><input class="number" type="text" value="1" /></td>
-						<td><span class="sumPrice"></span></td>
-					</tr>
+					
 					<tr>
 						<td colspan="3">总计</td>
 						<td><span id="totalPrices">2.00</span></td>
@@ -112,114 +107,9 @@
 	<script src="js/vender/bootstrap.min.js"></script>
     <script src="js/vender/jquery.js"></script>
     <script src="js/order/order.js"></script>
+	<script src="js/vender/cookie.js"></script>
     <script type="text/javascript">
-	function cookie(name){    
-	 
-	   var cookieArray=document.cookie.split("; "); //得到分割的cookie名值对    
-	 
-	   var cookie=new Object();    
-	 
-	   for (var i=0;i<cookieArray.length;i++){    
-	 
-	      var arr=cookieArray[i].split("=");       //将名和值分开    
-	 
-	      if(arr[0]==name)return unescape(arr[1]); //如果是指定的cookie，则返回它的值    
-	 
-	   } 
-	 
-	   return ""; 
-	 
-	} 
-	 
-	  
-	 
-	function delCookie(name)//删除cookie
-	 
-	{
-	 
-	   document.cookie = name+"=;expires="+(new Date(0)).toGMTString();
-	 
-	}
-	 
-	  
-	 
-	function getCookie(objName){//获取指定名称的cookie的值
-	 
-	    var arrStr = document.cookie.split("; ");
-	 
-	    for(var i = 0;i < arrStr.length;i ++){
-	 
-	        var temp = arrStr[i].split("=");
-	 
-	        if(temp[0] == objName) return unescape(temp[1]);
-	 
-	   } 
-	 
-	}
-	 
-	  
-	 
-	function addCookie(objName,objValue,objHours){      //添加cookie
-	 
-	    var str = objName + "=" + escape(objValue);
-	 
-	    if(objHours > 0){                               //为时不设定过期时间，浏览器关闭时cookie自动消失
-	 
-	        var date = new Date();
-	 
-	        var ms = objHours*3600*1000;
-	 
-	        date.setTime(date.getTime() + ms);
-	 
-	        str += "; expires=" + date.toGMTString();
-	 
-	   }
-	 
-	   document.cookie = str;
-	 
-	}
-	 
-	  
-	 
-	function SetCookie(name,value)//两个参数，一个是cookie的名子，一个是值
-	 
-	{
-	 
-	    var Days = 30; //此 cookie 将被保存 30 天
-	 
-	    var exp = new Date();    //new Date("December 31, 9998");
-	 
-	    exp.setTime(exp.getTime() + Days*24*60*60*1000);
-	 
-	    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
-	 
-	}
-	 
-	function getCookie(name)//取cookies函数        
-	 
-	{
-	 
-	    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
-	 
-	     if(arr != null) return unescape(arr[2]); return null;
-	 
-	  
-	 
-	}
-	 
-	function delCookie(name)//删除cookie
-	 
-	{
-	 
-	    var exp = new Date();
-	 
-	    exp.setTime(exp.getTime() - 1);
-	 
-	    var cval=getCookie(name);
-	 
-	    if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-	 
-	}
+	
     
     	var code;
     
@@ -370,7 +260,7 @@
         			
 						//更新订单详情部分
 						
-        			document.getElementById("phoneNumber").value = bookNames[2];
+        			
         			
         			}
         		});
@@ -398,17 +288,18 @@
         function addToOrder(name,price){
 			var $tr = $("<tr></tr>");
 			var $td1 = $("<td>" + name + "</td>");
-			var $td2 = $("<td><span class=\"price\">" + price + "</span></td>");
+			var $td2 = $("<td><span class=\"price\">" + parseFloat(price).toFixed(2) + "</span></td>");
 			var $td3 = $("<td></td>");
 			var $input = $("<input class=\"number\" type=\"text\" value=\"1\"></input>");
+			var $td4 = $("<td><span class=\"subTotal\">" + parseFloat(price).toFixed(2) + "</span></td>");
 			$input.change(function(){
 				var rentDay = $(this).val();
 				var rentPrice = $(this).parents("tr").find("span.price").text();
 				var total = 0;
-				var subTotal = praseInt(renDay) * praseFloat(rentPrice);
-				$(this).parents("tr").find("span.price").text(subTotal);
+				var subTotal = parseInt(rentDay) * parseFloat(rentPrice);
+				$(this).parents("tr").find("span.subTotal").text(subTotal.toFixed(2));
 				
-				$("span.price").each(function(){
+				$("span.subTotal").each(function(){
 					var sub = $(this).text();
 					total = parseFloat(sub) + total;
 					total = parseFloat(total);
@@ -416,13 +307,13 @@
 				
 				$("#totalPrices").text("￥ " + total.toFixed(2));
 			});
-			var $td4 = $("<td><span class=\"sumPrice\">" + price + "</span></td>");
+			
 			
 			$tr.append($td1);
 			$tr.append($td2);
 			$td3.append($input);
 			$tr.append($td3);
-			
+			$tr.append($td4);
 			$("tbody").prepend($tr);
 		}
 	</script>

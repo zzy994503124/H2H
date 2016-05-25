@@ -362,7 +362,7 @@
 
     }); */
 
-    $("#addCar").click(function(){
+    $("#addCar").click(function(event){
         var book_added = false;
         var bookName = $("#bookName").text();
         var rentPrice = $("#price").text();

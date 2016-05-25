@@ -157,6 +157,9 @@ a.link {
 	width: 40%;
 	position: relative;
 }
+#title ul li:nth-child(1){
+	text-align:right;
+}
 #title ul li:nth-child(3){
 	text-align:left;
 }
