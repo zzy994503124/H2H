@@ -3,10 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta charset="utf-8">
 <title>登陆丨H2H</title>
-<!--    <link rel="stylesheet" href="css/login_register/login.css">-->
-<link rel="stylesheet" href="css/login_register/login_register.min.css">
-	<link rel="stylesheet" type="text/css" href="css/login_register/xcConfirm.css"/>
-
+    <link rel="stylesheet" href="css/login_register/login.css">
+	<link rel="stylesheet" href="css/login_register/login_register.min.css">
+	
 
 <body>
 
@@ -48,27 +47,30 @@
 <script src="js/login_register/bgChange.js"></script>
 <script src="js/login_register/common.js"></script>
 -->
+
 <script src="js/login_register/login_register.min.js"></script>
 <!--背景图片自动更换-->
 <script src="js/vender/supersized.3.2.7.min.js"></script>
 <script src="js/vender/supersized-init.js"></script>
+<script src="js/vender/jquery-1.11.0.min.js"></script>
+<script src="js/vender/cookie.js"></script>
 <!--表单验证-->
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
 
+	
 	function check(){
 		//verify用来判断验证码是否正确
 		var verify = false;
 		var loginsucess = true;
-		var format=true;    //表单格式
+		var format=false;    //表单格式
 		
 		
-		//判断其他信息是否正确
-		
+		//判断格式
+		format = true;
 		
 		var verifyCode = document.getElementById("identifyingCode").value;
-		
-		
+	
 		//判断格式
 		if(format)
 			{
@@ -78,21 +80,32 @@
 			if(msg=="1")
 			{
 				varify = true;
-				alert("verify success");
+
+				var email = document.getElementById("LoginEmail").value;
+				var password = document.getElementById("LoginPassword").value;
 				
-				// check login info
 				
-				//判断信息
-				if(!loginsucess){
-					alert("username or pass wrong");
+				$.post("logic/checkLogin.php",{useremail:email,userpassword:password},function(msg)
+						{					
 					
-				}
-				else{
-					alert("return ture");
-					document.loginForm.submit(); 
-					//return true;
-					//window.location.href = "index.html";
-				}
+							if(msg == 1)
+								{
+									var splitEmail = email.substring(0,8);
+									 
+									addCookie("login","true","10");
+									addCookie("email",splitEmail,"10");
+									
+									document.loginForm.submit();
+									
+									
+								}
+							else
+								{
+								
+								alert("邮箱或密码错误");
+								document.getElementById("identifyingCodeImg").src='security/verifyCode.php';
+								}
+						});
 				
 			}
 			else{
@@ -100,8 +113,8 @@
 				document.getElementById('identifyingCodeImg').src='security/verifyCode.php';
 			}
 		});
-		}
-
+		}	
+		return;
 	}
 </script>
 </html>

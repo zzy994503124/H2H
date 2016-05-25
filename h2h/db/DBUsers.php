@@ -31,10 +31,10 @@ class DBUsers
  */
     public function insertUser($email,$username,$userpsd){
     	$this->connect();
-    	$sql = "insert into usr(usereEmail, userPsd, username) values ('$email','$userpsd','$username')";
+    	$sql = "insert into usr(userEmail, userPsd, username) values ('".$email."','".$userpsd."','".$username."');";
     	$result = $this->conn->query($sql);
-    	$this->disconnect();
-    	return $result;
+		return $result;
+		$this->disconnect();
     }
     
     /**
@@ -45,10 +45,15 @@ class DBUsers
     public function checkLogin($email, $psd)
     {
     	$this->connect();
-    	$sql = "select count(*) from usr where userEmail= '$email' and userPsd='$psd'";
+    	$sql = "SELECT * from usr where userEmail='".$email."' and userPsd='".$psd."';";
+    	//$sql = "select * from usr";
     	$result = $this->conn->query($sql);
+
+    	$raw=mysqli_fetch_array($result);
+    	return sizeof($raw)/14;
     	$this->disconnect();
-    	return $result;
+    	
+    	//return mysql_num_rows($result);
     }
     
     

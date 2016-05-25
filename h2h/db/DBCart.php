@@ -24,34 +24,65 @@ class DBCart
     }
 
 /**
- * 注册新用户
- * @param unknown $email
- * @param unknown $username
- * @param unknown $userpsd
+ * 读取购物车书籍
+ * @param unknown $email 用户email
  */
-    public function getCart($email,$username,$userpsd){
+    public function getCart($email){
     	$this->connect();
-    	$sql = "insert into usr(usereEmail, userPsd, username) values ('$email','$userpsd','$username')";
+    	$sql = "select bookName,rentPrice from book_rent, book,cart where 
+    			book.bookId = book_rent.bookId and book.bookId = cart.bookId 
+    			and userEmail='".$email."';";
+    	
+    	$result = $this->conn->query($sql);
+    	while ($row = mysqli_fetch_array($result))
+    		$rows[] = $row;
+    		return $rows;
+    	$this->disconnect();
+    }
+    
+    /**
+     * 加入购物车
+     * @param unknown $email
+     * @param unknown $bookId
+     */
+    public function addToCart($email, $bookId)
+    {
+    	$this->connect();
+    	$sql = "insert into cart values ('".$email."','".$bookId."');";
+    	$result = $this->conn->query($sql);
+    	$this->disconnect();
+    	return $result;
+    }
+
+    /**
+     * 从购物车删除
+     * @param unknown $email
+     * @param unknown $bookId
+     */
+    public function deleteFromCart($email, $bookname)
+    {
+    	$this->connect();
+    	$sql = "delete from cart where bookid=(select bookId from book where bookName = '".$bookname."');";
+    
+    	//$sql = "delete from cart where userEmail='".$email."'and bookid = '".$bookId."';";
     	$result = $this->conn->query($sql);
     	$this->disconnect();
     	return $result;
     }
     
     /**
-     * 检查登录
-     * @param unknown $email
-     * @param unknown $psd
+     * 清空购物车
+     * @param unknown $email 用户邮箱
+     * @return unknown
      */
-    public function checkLogin($email, $psd)
+    public function clearCart($email)
     {
     	$this->connect();
-    	$sql = "select count(*) from usr where userEmail= '$email' and userPsd='$psd'";
+    	$sql = "delete from cart where userEmail = '".$email."';";
     	$result = $this->conn->query($sql);
     	$this->disconnect();
     	return $result;
     }
-    
-    
     public function disconnect(){
     	$this->conn->close();
     }

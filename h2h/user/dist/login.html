@@ -3,16 +3,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta charset="utf-8">
 <title>登陆丨H2H</title>
-<!--    <link rel="stylesheet" href="css/login_register/login.css">-->
-<link rel="stylesheet" href="css/login_register/login_register.min.css">
-	<link rel="stylesheet" type="text/css" href="css/login_register/xcConfirm.css"/>
+    <link rel="stylesheet" href="css/login_register/login.css">
+	<link rel="stylesheet" href="css/login_register/login_register.min.css">
 
 
 <body>
 
 <div class="login-container">
 	<div>
-		<a href="/"><img id="logo" src="img/logoBig.png" /></a>
+		<a href="/"><img id="logo" src="img/Logo.png" /></a>
 	</div>
 	<div class="connect">
 		<p>Link the world. Share to world.</p>
@@ -36,7 +35,7 @@
 		</div>
 		<button id="loginsubmit" type="submit">登 录</button>
 	</form>
-
+	
 	<a href="register.html">
 		<button id="ToSignUp" type="button" class="register-tis">还没有账号？</button>
 	</a>
@@ -56,8 +55,18 @@
 <script src="js/vender/jquery.validate.min.js?var1.14.0"></script>
 <script>
 	$('#loginsubmit').click(function(){
+		//verify用来判断验证码是否正确
+		var verify = false;
+		var verifyCode = document.getElementById("identifyingCode").value;
+		$.post("security/checkVerifyCode.php",{code:verifyCode},function(msg){
+			if(msg==1)
+			{
+				varify = true;
+				alert("验证码正确");
+			}
+		});
 		if(true){
-			window.location.href = "index.html";
+			//window.location.href = "index.html";
 		}else{
 			alert("登录失败！");
 		}

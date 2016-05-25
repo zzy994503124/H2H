@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" href="css/registerconfirm/registerConfirm.css">-->
+    <link rel="stylesheet" href="css/registerconfirm/registerConfirm.css">
     <link rel="stylesheet" href="css/registerconfirm/registerconfirm.min.css">
 </head>
 <body>
@@ -25,4 +25,12 @@
         </div>
     </div>
 </body>
+
+<script type="text/javascript">
+	window.onload= function(){
+		var url = location.search;
+		var email =  url.split("=")[1];
+		document.getElementById("registerEmail").innerHTML=email;
+	}
+</script>
 </html>

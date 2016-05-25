@@ -47,10 +47,10 @@ module.exports = function(grunt){
                 src:['dist/js/<%=pkg.pagename%>/<%=pkg.pagename%>.js'],
                 dest:'dist/js/<%=pkg.pagename%>/<%=pkg.pagename%>.min.js'
             },
-            build1:{
-                src:['dist/js/<%=pkg.pagename%>/<%=pkg.pagename%>.js'],
-                dest:'src/js/<%=pkg.pagename%>/<%=pkg.pagename%>.min.js'
-            }
+            // build1:{
+            //     src:['dist/js/<%=pkg.pagename%>/<%=pkg.pagename%>.js'],
+            //     dest:'src/js/<%=pkg.pagename%>/<%=pkg.pagename%>.min.js'
+            // }
         },
         clean: {
             cleanoutput: {

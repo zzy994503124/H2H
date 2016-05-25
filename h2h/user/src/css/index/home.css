@@ -135,36 +135,39 @@ a.link {
 	background-color: rgb(249, 249, 249);
 }
 #title ul{
-	width: 150px;
+	width: 220px;
 	position: absolute;
 	right: 50px;
 	bottom: 20px;
-	display: inline-block;
-
+	display: block;
+	text-align: center;
+}
+#title ul span{
+	height:12px;
+	width:2px;
+	background-color:gray;
+	display:inline-block;
 }
 #title ul li{
 	display: inline-block;
 	color: gray;
-	letter-spacing: 5px;
 	font-family: "微软雅黑";
 	font-size: 17px;
 	margin:0;
 	width: 40%;
 	position: relative;
 }
+#title ul li:nth-child(1){
+	text-align:right;
+}
+#title ul li:nth-child(3){
+	text-align:left;
+}
 #title ul li a{
 	color: #808080;
 
 }
-#title ul li:first-child:after{
-	display: inline-block;
-	content: "";
-	width: 2px;
-	height: 70%;
-	position: absolute;
-	background-color:#808080;
-	margin: 4px 0 4px 7px;
-}
+
 #title ul li a:hover{
 	color: rgb(38,66,141);
 }
@@ -346,9 +349,9 @@ a.link {
 	}
 }
 footer{
-	width: 90%;
+	width: 100%;
 	padding: 20px;
-	margin: 20px auto;
+	margin: 20px auto 0;
 	background-color: rgb(249, 249, 249);
 	color: rgb(0, 0, 0);
 	font-family: "微软雅黑";
