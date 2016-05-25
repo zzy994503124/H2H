@@ -106,6 +106,20 @@ module.exports = function(grunt){
                 dest: "dist/js/<%=pkg.pagename%>/<%=pkg.pagename%>.js"
             }
         },
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: [{
+                expand: true,
+                cwd: 'src',
+                src: '*.html',
+                dest: 'dist/'
+                }]
+            }
+        },
         watch:{
             //build:{
             //    files:['css/info.css','js/info.js'],
@@ -179,11 +193,14 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
-
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    
     grunt.registerTask('removecss',['uncss']);
+    grunt.registerTask('html',['htmlmin']);
     grunt.registerTask('img',['imagemin']);
     grunt.registerTask('copyfiles',['copy']);
     grunt.registerTask('checkcss','csslint');
     grunt.registerTask('default',['concat','uglify','clean','cssmin']);
     grunt.registerTask('live', ['connect', 'watch']);
+    
 };
